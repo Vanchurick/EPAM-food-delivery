@@ -1,8 +1,10 @@
 import { createStore, combineReducers } from 'redux';
 import userReducer from './reducers/userReducer';
+import modalReducer from './reducers/modalReducer';
 
 const rootReducer = combineReducers({
   user: userReducer,
+  modal: modalReducer,
 });
 
 /* eslint-disable no-underscore-dangle */
