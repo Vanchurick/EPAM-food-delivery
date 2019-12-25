@@ -1,4 +1,4 @@
-import { ActionType } from '../actions/userActions';
+import ActionType from '../actions/userActions';
 
 const initialState = {
   login: '',

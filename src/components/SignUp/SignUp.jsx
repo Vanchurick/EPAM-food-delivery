@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import styles from './SignUp.module.css';
 import { closeModal } from '../../redux/actions/modalActions';
 
+import Button from '../Button/Button';
+
 class SignUp extends Component {
   state = { email: '', password: '', name: '' };
 
@@ -14,50 +16,58 @@ class SignUp extends Component {
     this.setState({ [name]: value });
   };
 
+  handleSubmit = e => {
+    const { closeModalWindow } = this.props;
+
+    e.preventDefault();
+    closeModalWindow();
+  };
+
   render() {
     const { email, password, name } = this.state;
     const { closeModalWindow } = this.props;
 
     return (
-      <form action="POST" className={styles.form}>
+      <form action="POST" className={styles.form} onSubmit={this.handleSubmit}>
         <label htmlFor="email">
-          <p> E-mail:</p>
+          <p className={styles.label}> E-mail:</p>
           <input
             type="email"
             onChange={this.handleChange}
             name="email"
             value={email}
             id="email"
-            placeholder="Введите почту"
+            placeholder="exapmle@gmail.com"
+            className={styles.input}
           />
         </label>
         <label htmlFor="password">
-          <p>Password:</p>
+          <p className={styles.label}>Password:</p>
           <input
             type="password"
             onChange={this.handleChange}
             name="password"
             value={password}
             id="password"
-            placeholder="Введите пароль"
+            placeholder="8 symbols and more"
+            className={styles.input}
           />
         </label>
         <label htmlFor="name">
-          <p>Name:</p>
+          <p className={styles.label}>Name:</p>
           <input
             type="text"
             onChange={this.handleChange}
             name="name"
             value={name}
             id="name"
-            placeholder="Введите имя"
+            placeholder="Jack or Jack Sparrow or Captan Jack Sparrow"
+            className={styles.input}
           />
         </label>
-        <div>
-          <button type="button" onClick={closeModalWindow}>
-            Отмена
-          </button>
-          <button type="submit">Зарегестрироваться</button>
+        <div className={styles.buttons}>
+          <Button text="Cancel" type="button" func={closeModalWindow} />
+          <Button text="Sign up" type="submit" func={this.handleSubmit} />
         </div>
       </form>
     );

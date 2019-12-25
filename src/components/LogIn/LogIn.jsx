@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import styles from './LogIn.module.css';
 import { closeModal } from '../../redux/actions/modalActions';
 
+import Button from '../Button/Button';
+
 class LogIn extends Component {
   state = { email: '', password: '' };
 
@@ -21,33 +23,37 @@ class LogIn extends Component {
     return (
       <form action="POST" className={styles.form}>
         <label htmlFor="email">
-          <p> E-mail:</p>
+          <p className={styles.label}> E-mail:</p>
           <input
             type="email"
             onChange={this.handleChange}
             name="email"
             value={email}
             id="email"
-            placeholder="Введите почту"
+            placeholder="example@gmail.com"
+            className={styles.input}
           />
         </label>
         <label htmlFor="password">
-          <p>Password:</p>
+          <p className={styles.label}>Password:</p>
           <input
             type="password"
             onChange={this.handleChange}
             name="password"
             value={password}
             id="password"
-            placeholder="Введите пароль"
+            placeholder="password"
+            className={styles.input}
           />
         </label>
 
-        <div>
-          <button type="button" onClick={closeModalWindow}>
+        <div className={styles.buttons}>
+          <Button type="button" text="Cancel" func={closeModalWindow} />
+          <Button type="submit" text="Login" func={closeModalWindow} />
+          {/* <button type="button" onClick={closeModalWindow}>
             Отмена
           </button>
-          <button type="submit">Войти</button>
+          <button type="submit">Войти</button> */}
         </div>
       </form>
     );

@@ -1,2 +1,9 @@
 @import './libs/normalize.css';
 @import './vars.css';
+@import './fonts.css';
+
+* {
+  font-family: 'GothamPro';
+  font-style: normal;
+  font-weight: normal;
+}

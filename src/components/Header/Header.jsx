@@ -1,26 +1,27 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import {
   openModalSignUp,
   openModalLogIn,
 } from '../../redux/actions/modalActions';
+import Button from '../Button/Button';
+import styles from './Header.module.css';
+import logo from '../../assets/images/logo.png';
 
 const Header = ({ openSignUpForm, openLogInForm }) => (
-  <header>
+  <header className={styles.header}>
     <div>
-      <NavLink exact to="/">
-        FD
-      </NavLink>
+      <Link exact to="/">
+        <div className={styles.logoContainer}>
+          <img src={logo} alt="logo" className={styles.logo} />
+        </div>
+      </Link>
     </div>
     <div>
-      <button type="button" onClick={openSignUpForm}>
-        Sign Up
-      </button>
-      <button type="button" onClick={openLogInForm}>
-        Log In
-      </button>
+      <Button text="Sign Up" type="button" func={openSignUpForm} />
+      <Button text="login" type="button" func={openLogInForm} />
     </div>
   </header>
 );

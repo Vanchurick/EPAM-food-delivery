@@ -1,4 +1,6 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import userReducer from './reducers/userReducer';
 import modalReducer from './reducers/modalReducer';
 
@@ -7,11 +9,9 @@ const rootReducer = combineReducers({
   modal: modalReducer,
 });
 
-/* eslint-disable no-underscore-dangle */
-const reduxDevTools =
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
-/* eslint-enable */
+const middleWares = [thunk];
+const enhancer = composeWithDevTools(applyMiddleware(...middleWares));
 
-const store = createStore(rootReducer, reduxDevTools);
+const store = createStore(rootReducer, enhancer);
 
 export default store;
