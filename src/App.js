@@ -11,7 +11,7 @@ class App extends Component {
       <div>
         <Header />
         <Switch>
-          <Route path="/" exact component={HomePage} />
+          <Route exact path="/" component={HomePage} />
           <Redirect push to="/" />
         </Switch>
       </div>

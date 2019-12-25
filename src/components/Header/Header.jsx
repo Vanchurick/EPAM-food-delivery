@@ -13,7 +13,7 @@ import logo from '../../assets/images/logo.png';
 const Header = ({ openSignUpForm, openLogInForm }) => (
   <header className={styles.header}>
     <div>
-      <Link exact to="/">
+      <Link to="/">
         <div className={styles.logoContainer}>
           <img src={logo} alt="logo" className={styles.logo} />
         </div>

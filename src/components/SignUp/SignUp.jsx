@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import styles from './SignUp.module.css';
 import { closeModal } from '../../redux/actions/modalActions';
+import signUpUser from '../../redux/operations/userOperations';
 
 import Button from '../Button/Button';
 
@@ -17,9 +18,11 @@ class SignUp extends Component {
   };
 
   handleSubmit = e => {
-    const { closeModalWindow } = this.props;
+    const { closeModalWindow, signUp } = this.props;
 
     e.preventDefault();
+    signUp(this.state);
+
     closeModalWindow();
   };
 
@@ -39,6 +42,7 @@ class SignUp extends Component {
             id="email"
             placeholder="exapmle@gmail.com"
             className={styles.input}
+            required
           />
         </label>
         <label htmlFor="password">
@@ -51,11 +55,14 @@ class SignUp extends Component {
             id="password"
             placeholder="8 symbols and more"
             className={styles.input}
+            required
+            minLength="8"
           />
         </label>
         <label htmlFor="name">
           <p className={styles.label}>Name:</p>
           <input
+            required
             type="text"
             onChange={this.handleChange}
             name="name"
@@ -63,6 +70,7 @@ class SignUp extends Component {
             id="name"
             placeholder="Jack or Jack Sparrow or Captan Jack Sparrow"
             className={styles.input}
+            minLength="2"
           />
         </label>
         <div className={styles.buttons}>
@@ -76,10 +84,12 @@ class SignUp extends Component {
 
 SignUp.propTypes = {
   closeModalWindow: PropTypes.func.isRequired,
+  signUp: PropTypes.func.isRequired,
 };
 
 const mDTP = dispatch => ({
   closeModalWindow: () => dispatch(closeModal()),
+  signUp: userData => dispatch(signUpUser(userData)),
 });
 
 export default connect(null, mDTP)(SignUp);

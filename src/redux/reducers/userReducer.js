@@ -1,17 +1,18 @@
-import ActionType from '../actions/userActions';
+import { ActionType } from '../actions/userActions';
 
 const initialState = {
-  login: '',
+  email: '',
   password: '',
-  autorizated: false,
+  name: '',
+  autorization: false,
 };
 
 const userReducer = (state = initialState, { type, payload }) => {
   switch (type) {
-    case ActionType.SIGN_UP:
-      return { ...state, login: payload.login, password: payload.password };
-    case ActionType.SIGN_IN:
-      return { ...state, login: payload.login, password: payload.password };
+    case ActionType.SIGN_UP_SUCCESS:
+      return { ...state, ...payload.user, autorization: true };
+    case ActionType.SIGN_UP_ERROR:
+      return { ...state };
     default:
       return state;
   }
