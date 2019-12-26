@@ -3,10 +3,12 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import userReducer from './reducers/userReducer';
 import modalReducer from './reducers/modalReducer';
+import loaderReducer from './reducers/loaderReducer';
 
 const rootReducer = combineReducers({
   user: userReducer,
   modal: modalReducer,
+  loader: loaderReducer,
 });
 
 const middleWares = [thunk];

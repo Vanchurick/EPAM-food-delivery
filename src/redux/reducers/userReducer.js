@@ -10,7 +10,17 @@ const initialState = {
 const userReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case ActionType.SIGN_UP_SUCCESS:
-      return { ...state, ...payload.user, autorization: true };
+      if (payload.user.status === 'failed') {
+        return {
+          email: '',
+          password: '',
+          name: '',
+          autorization: false,
+        };
+      }
+
+      return { ...state, ...payload.user.user, autorization: true };
+    // return { ...state, ...payload.user, autorization: true };
     case ActionType.SIGN_UP_ERROR:
       return { ...state };
     default:

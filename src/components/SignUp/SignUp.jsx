@@ -9,7 +9,11 @@ import signUpUser from '../../redux/operations/userOperations';
 import Button from '../Button/Button';
 
 class SignUp extends Component {
-  state = { email: '', password: '', name: '' };
+  state = {
+    email: '',
+    password: '',
+    name: '',
+  };
 
   handleChange = e => {
     const { name, value } = e.target;

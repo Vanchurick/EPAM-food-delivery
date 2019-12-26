@@ -7,3 +7,8 @@
   font-style: normal;
   font-weight: normal;
 }
+
+#root {
+  position: relative;
+  height: 100vh;
+}
