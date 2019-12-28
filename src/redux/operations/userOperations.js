@@ -4,9 +4,12 @@ import {
   signUpStart,
   signUpSuccess,
   signUpError,
+  logInStart,
+  logInSuccess,
+  logInError,
 } from '../actions/userActions';
 
-const signUpUser = credentials => dispatch => {
+export const signUpUser = credentials => dispatch => {
   dispatch(signUpStart());
   axios
     .post('http://localhost:6060/signup', credentials)
@@ -14,4 +17,11 @@ const signUpUser = credentials => dispatch => {
     .catch(err => dispatch(signUpError(err)));
 };
 
-export default signUpUser;
+export const loginUser = credentials => dispatch => {
+  dispatch(logInStart());
+
+  axios
+    .post('http://localhost:6060/login', credentials)
+    .then(resp => dispatch(logInSuccess(resp.data)))
+    .catch(error => dispatch(logInError(error)));
+};

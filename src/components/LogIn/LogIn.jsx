@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-
+import { loginUser } from '../../redux/operations/userOperations';
 import styles from './LogIn.module.css';
 import { closeModal } from '../../redux/actions/modalActions';
 
@@ -16,12 +16,22 @@ class LogIn extends Component {
     this.setState({ [name]: value });
   };
 
+  handleSubmit = e => {
+    const { logIn, closeModalWindow } = this.props;
+
+    e.preventDefault();
+
+    logIn(this.state);
+
+    closeModalWindow();
+  };
+
   render() {
     const { email, password } = this.state;
     const { closeModalWindow } = this.props;
 
     return (
-      <form action="POST" className={styles.form}>
+      <form action="POST" className={styles.form} onSubmit={this.handleSubmit}>
         <label htmlFor="email">
           <p className={styles.label}> E-mail:</p>
           <input
@@ -49,11 +59,7 @@ class LogIn extends Component {
 
         <div className={styles.buttons}>
           <Button type="button" text="Cancel" func={closeModalWindow} />
-          <Button type="submit" text="Login" func={closeModalWindow} />
-          {/* <button type="button" onClick={closeModalWindow}>
-            Отмена
-          </button>
-          <button type="submit">Войти</button> */}
+          <Button type="submit" text="Login" func={this.handleSubmit} />
         </div>
       </form>
     );
@@ -62,10 +68,12 @@ class LogIn extends Component {
 
 LogIn.propTypes = {
   closeModalWindow: PropTypes.func.isRequired,
+  logIn: PropTypes.func.isRequired,
 };
 
 const mDTP = dispatch => ({
   closeModalWindow: () => dispatch(closeModal()),
+  logIn: data => dispatch(loginUser(data)),
 });
 
 export default connect(null, mDTP)(LogIn);

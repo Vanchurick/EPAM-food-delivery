@@ -8,6 +8,12 @@ const loaderReducer = (state = false, { type }) => {
       return false;
     case ActionType.SIGN_UP_ERROR:
       return false;
+    case ActionType.LOG_IN_START:
+      return true;
+    case ActionType.LOG_IN_SUCCESS:
+      return false;
+    case ActionType.LOG_IN_ERROR:
+      return false;
     default:
       return state;
   }

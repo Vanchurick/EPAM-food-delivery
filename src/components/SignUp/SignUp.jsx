@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import styles from './SignUp.module.css';
 import { closeModal } from '../../redux/actions/modalActions';
-import signUpUser from '../../redux/operations/userOperations';
+import { signUpUser } from '../../redux/operations/userOperations';
 
 import Button from '../Button/Button';
 

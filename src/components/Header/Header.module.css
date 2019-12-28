@@ -13,3 +13,19 @@
 .logo {
   width: 100%;
 }
+
+.greeting {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.greetingContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.logout {
+  width: 20px;
+  margin: 20px;
+}
