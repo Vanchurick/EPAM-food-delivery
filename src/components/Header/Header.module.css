@@ -3,7 +3,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 50px;
-  border-bottom: 2px solid black;
 }
 
 .logoContainer {
@@ -28,4 +27,5 @@
 .logout {
   width: 20px;
   margin: 20px;
+  cursor: pointer;
 }

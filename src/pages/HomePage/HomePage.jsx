@@ -6,6 +6,7 @@ import SignUp from '../../components/SignUp/SignUp';
 import Modal from '../../components/Modal/Modal';
 import LogIn from '../../components/LogIn/LogIn';
 import Loader from '../../components/Loader/Loader';
+import Slider from '../../components/Gallery/Gallery';
 
 class HomePage extends Component {
   state = {};
@@ -19,7 +20,7 @@ class HomePage extends Component {
           <Loader />
         ) : (
           <div>
-            <h1>Home page</h1>
+            <Slider />
           </div>
         )}
         {modal && (
