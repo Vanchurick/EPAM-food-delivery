@@ -9,8 +9,13 @@
     "query-string": "^6.8.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-redux": "^7.1.3",
+    "react-reveal": "^1.2.2",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "3.3.0",
-    "react-router-dom": "^5.0.1"
+    "redux": "^4.0.4",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -49,5 +54,6 @@
     "lint-staged": "^8.1.7",
     "prettier": "^1.17.1",
     "prop-types": "^15.7.2"
-  }
+  },
+  "homepage": "https://vanchurick.github.io/EPAM-food-delivery/"
 }
