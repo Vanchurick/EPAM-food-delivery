@@ -1,0 +1,14 @@
+.container {
+  border: 1px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+}
+
+.image {
+  width: 80%;
+}
