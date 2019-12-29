@@ -23,28 +23,28 @@ class Slider extends Component {
     const Carousel = makeCarousel(CarouselUI);
 
     return (
-      <Carousel defaultWait={4000} forever>
-        <Slide right>
+      <Carousel defaultWait={6000} maxTurns={10}>
+        <Slide right duration={3000}>
           <div className={style.imageContainer}>
             <img src={ukrainianCuisine} alt="" className={style.image} />
           </div>
         </Slide>
-        <Slide right>
+        <Slide right duration={3000}>
           <div>
             <img src={pizzaCuisine} alt="" className={style.image} />
           </div>
         </Slide>
-        <Slide right>
+        <Slide right duration={3000}>
           <div>
             <img src={georgianCuisine} alt="" className={style.image} />
           </div>
         </Slide>
-        <Slide right>
+        <Slide right duration={3000}>
           <div>
             <img src={japaneseCuisine} alt="" className={style.image} />
           </div>
         </Slide>
-        <Slide right>
+        <Slide right duration={3000}>
           <div>
             <img src={italianCuisine} alt="" className={style.image} />
           </div>

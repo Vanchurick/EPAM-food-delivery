@@ -6,6 +6,7 @@ export const ActionType = {
   LOG_IN_SUCCESS: 'LOG_IN_SUCCESS',
   LOG_IN_ERROR: 'LOG_IN_ERROR',
   LOG_OUT: 'LOG_OUT',
+  SET_ADRESS: 'SET_ADRESS',
 };
 
 // Sign up user actioncreators
@@ -44,4 +45,11 @@ export const logInError = error => ({
 
 export const logOut = () => ({
   type: 'LOG_OUT',
+});
+
+// user adress
+
+export const setAdress = adress => ({
+  type: 'SET_ADRESS',
+  payload: { adress },
 });
