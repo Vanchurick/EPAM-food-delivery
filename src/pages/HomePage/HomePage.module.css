@@ -1,3 +1,7 @@
 .sLiderContainer {
   position: relative;
 }
+
+.wrapper {
+  padding-top: 150px;
+}

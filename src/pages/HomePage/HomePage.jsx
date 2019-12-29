@@ -8,6 +8,7 @@ import LogIn from '../../components/LogIn/LogIn';
 import Loader from '../../components/Loader/Loader';
 import Slider from '../../components/Gallery/Gallery';
 import InputAdress from '../../components/InputAdress/InputAdress';
+import SelectCuisine from '../../components/SelectCuisine/SelectCuisine';
 
 import styles from './HomePage.module.css';
 
@@ -18,13 +19,16 @@ class HomePage extends Component {
     const { modal, signup, login, loader } = this.props;
 
     return (
-      <div>
+      <div className={styles.wrapper}>
         {loader ? (
           <Loader />
         ) : (
-          <div className={styles.sLiderContainer}>
-            <Slider />
-            <InputAdress />
+          <div>
+            <div className={styles.sLiderContainer}>
+              <Slider />
+              <InputAdress />
+            </div>
+            <SelectCuisine />
           </div>
         )}
         {modal && (
