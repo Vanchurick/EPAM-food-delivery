@@ -7,6 +7,9 @@ import Modal from '../../components/Modal/Modal';
 import LogIn from '../../components/LogIn/LogIn';
 import Loader from '../../components/Loader/Loader';
 import Slider from '../../components/Gallery/Gallery';
+import InputAdress from '../../components/InputAdress/InputAdress';
+
+import styles from './HomePage.module.css';
 
 class HomePage extends Component {
   state = {};
@@ -19,8 +22,9 @@ class HomePage extends Component {
         {loader ? (
           <Loader />
         ) : (
-          <div>
+          <div className={styles.sLiderContainer}>
             <Slider />
+            <InputAdress />
           </div>
         )}
         {modal && (

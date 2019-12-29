@@ -33,6 +33,7 @@ const userReducer = (state = initialState, { type, payload }) => {
         ...state,
         name: payload.user.name,
         email: payload.user.email,
+        id: payload.user.id,
         autorization: true,
       };
     case ActionType.LOG_IN_ERROR:
@@ -43,6 +44,8 @@ const userReducer = (state = initialState, { type, payload }) => {
       };
     case ActionType.LOG_OUT:
       return { ...state, email: '', name: '', autorization: false };
+    case ActionType.SET_ADRESS:
+      return { ...state, adress: payload.adress };
     default:
       return state;
   }
