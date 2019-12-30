@@ -19,16 +19,20 @@ const images = [
 ];
 
 const SelectCuisine = () => (
-  <div className={styles.container}>
-    {images.map(img => {
-      const path = `/menu/?category=${img.name}`;
-      const title = `${img.name} cuisine`;
-      return (
-        <Link to={path} key={img.name}>
-          <CuisineButton img={img.src} alt={img.name} title={title} />
-        </Link>
-      );
-    })}
+  <div className={styles.wrapper}>
+    <h2 className={styles.title}>What would you like today?</h2>
+
+    <div className={styles.container}>
+      {images.map(img => {
+        const path = `/menu/?category=${img.name}`;
+        const title = `${img.name} cuisine`;
+        return (
+          <Link to={path} key={img.name}>
+            <CuisineButton img={img.src} alt={img.name} title={title} />
+          </Link>
+        );
+      })}
+    </div>
   </div>
 );
 

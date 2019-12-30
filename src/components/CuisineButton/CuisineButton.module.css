@@ -1,5 +1,4 @@
 .container {
-  border: 1px solid black;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -7,6 +6,15 @@
   overflow: hidden;
   width: 200px;
   height: 200px;
+  margin: 0px 20px;
+  cursor: pointer;
+  box-shadow: 0 0 15px 2px #000;
+  transition: 0.5s;
+  background-color: #fff;
+}
+
+.container:hover {
+  box-shadow: 0 0 15px 10px green;
 }
 
 .image {
