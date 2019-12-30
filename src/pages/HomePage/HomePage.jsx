@@ -9,6 +9,7 @@ import Loader from '../../components/Loader/Loader';
 import Slider from '../../components/Gallery/Gallery';
 import InputAdress from '../../components/InputAdress/InputAdress';
 import SelectCuisine from '../../components/SelectCuisine/SelectCuisine';
+import BasketButton from '../../components/BasketButton/BasketButton';
 
 import styles from './HomePage.module.css';
 
@@ -28,6 +29,7 @@ class HomePage extends Component {
               <Slider />
               <InputAdress />
             </div>
+            <BasketButton />
             <SelectCuisine />
           </div>
         )}
