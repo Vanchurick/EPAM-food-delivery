@@ -1,4 +1,4 @@
 import { ReactComponent as Logout } from './logout.svg';
-import { ReactComponent as Exit } from './exit.svg';
+import { ReactComponent as Basket } from './basket.svg';
 
-export { Logout, Exit };
+export { Logout, Basket };
