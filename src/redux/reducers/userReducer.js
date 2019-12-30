@@ -1,4 +1,4 @@
-import { ActionType } from '../actions/userActions';
+import { UserActionType } from '../actions/userActions';
 
 const initialState = {
   email: '',
@@ -8,7 +8,7 @@ const initialState = {
 
 const userReducer = (state = initialState, { type, payload }) => {
   switch (type) {
-    case ActionType.SIGN_UP_SUCCESS:
+    case UserActionType.SIGN_UP_SUCCESS:
       if (payload.user.status === 'failed') {
         return {
           email: '',
@@ -19,9 +19,9 @@ const userReducer = (state = initialState, { type, payload }) => {
 
       return { ...state, ...payload.user.user, autorization: true };
 
-    case ActionType.SIGN_UP_ERROR:
+    case UserActionType.SIGN_UP_ERROR:
       return { ...state };
-    case ActionType.LOG_IN_SUCCESS:
+    case UserActionType.LOG_IN_SUCCESS:
       if (payload.status === 'failed') {
         return {
           email: '',
@@ -36,15 +36,15 @@ const userReducer = (state = initialState, { type, payload }) => {
         id: payload.user.id,
         autorization: true,
       };
-    case ActionType.LOG_IN_ERROR:
+    case UserActionType.LOG_IN_ERROR:
       return {
         email: '',
         name: '',
         autorization: false,
       };
-    case ActionType.LOG_OUT:
+    case UserActionType.LOG_OUT:
       return { ...state, email: '', name: '', autorization: false };
-    case ActionType.SET_ADRESS:
+    case UserActionType.SET_ADRESS:
       return { ...state, adress: payload.adress };
     default:
       return state;
