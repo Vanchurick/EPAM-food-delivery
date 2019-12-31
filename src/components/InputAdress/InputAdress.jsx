@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import debounce from 'lodash/debounce';
 import { setAdress } from '../../redux/actions/userActions';
 import styles from './InputAdress.module.css';
+import { getAdress } from '../../redux/selectors/selectors';
 
 class InputAdress extends Component {
   state = { value: '' };
@@ -58,7 +59,7 @@ InputAdress.propTypes = {
 };
 
 const mSTP = state => ({
-  adress: state.user.adress,
+  adress: getAdress(state),
 });
 
 const mDTP = dispatch => ({

@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+import {
+  getLoader,
+  getModal,
+  getModalSignUp,
+  getModalLogIn,
+} from '../../redux/selectors/selectors';
+
 import SignUp from '../../components/SignUp/SignUp';
 import Modal from '../../components/Modal/Modal';
 import LogIn from '../../components/LogIn/LogIn';
@@ -15,6 +22,13 @@ import styles from './HomePage.module.css';
 
 class HomePage extends Component {
   state = {};
+
+  static propTypes = {
+    modal: PropTypes.bool.isRequired,
+    signup: PropTypes.bool.isRequired,
+    login: PropTypes.bool.isRequired,
+    loader: PropTypes.bool.isRequired,
+  };
 
   render() {
     const { modal, signup, login, loader } = this.props;
@@ -44,18 +58,11 @@ class HomePage extends Component {
   }
 }
 
-HomePage.propTypes = {
-  modal: PropTypes.bool.isRequired,
-  signup: PropTypes.bool.isRequired,
-  login: PropTypes.bool.isRequired,
-  loader: PropTypes.bool.isRequired,
-};
-
 const mSTP = state => ({
-  modal: state.modal.modal,
-  signup: state.modal.signup,
-  login: state.modal.login,
-  loader: state.loader,
+  modal: getModal(state),
+  signup: getModalSignUp(state),
+  login: getModalLogIn(state),
+  loader: getLoader(state),
 });
 
 export default connect(mSTP, null)(HomePage);
