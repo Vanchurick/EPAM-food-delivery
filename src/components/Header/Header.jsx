@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 // redux
 
+import { getName, getAutorization } from '../../redux/selectors/selectors';
 import {
   openModalSignUp,
   openModalLogIn,
@@ -58,8 +59,8 @@ Header.propTypes = {
 };
 
 const mSTP = state => ({
-  autorization: state.user.autorization,
-  name: state.user.name,
+  autorization: getAutorization(state),
+  name: getName(state),
 });
 
 const mDTP = dispatch => ({

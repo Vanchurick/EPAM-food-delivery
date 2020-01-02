@@ -4,11 +4,15 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import userReducer from './reducers/userReducer';
 import modalReducer from './reducers/modalReducer';
 import loaderReducer from './reducers/loaderReducer';
+import menuReducer from './reducers/menuReducer';
+import basketReducer from './reducers/basketReducer';
 
 const rootReducer = combineReducers({
   user: userReducer,
   modal: modalReducer,
   loader: loaderReducer,
+  menu: menuReducer,
+  basket: basketReducer,
 });
 
 const middleWares = [thunk];
