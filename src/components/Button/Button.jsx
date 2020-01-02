@@ -2,16 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import style from './Button.module.css';
 
-const Button = ({ text, type, func }) => {
+const Button = ({ text, type, func, className }) => {
+  const buttonClasses = [style.button, className];
+
   if (type === 'submit') {
     return (
-      <button type="submit" onSubmit={func} className={style.button}>
+      <button type="submit" onSubmit={func} className={buttonClasses.join(' ')}>
         {text}
       </button>
     );
   }
   return (
-    <button type="button" onClick={func} className={style.button}>
+    <button type="button" onClick={func} className={buttonClasses.join(' ')}>
       {text}
     </button>
   );
@@ -21,6 +23,11 @@ Button.propTypes = {
   text: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   func: PropTypes.func.isRequired,
+  className: PropTypes.string,
+};
+
+Button.defaultProps = {
+  className: '',
 };
 
 export default Button;

@@ -15,6 +15,17 @@ import SignUp from '../../components/SignUp/SignUp';
 import Modal from '../../components/Modal/Modal';
 import LogIn from '../../components/LogIn/LogIn';
 import Loader from '../../components/Loader/Loader';
+import Menu from '../../components/Menu/Menu';
+
+import getCategoryFromUrl from '../../helpers/helpers';
+
+import ukraine from '../../assets/images/slider/ukrainian-cuisine.jpg';
+import italia from '../../assets/images/slider/italian-cuisine.jpg';
+import georgia from '../../assets/images/slider/georgian-cuisine.jpg';
+import japan from '../../assets/images/slider/japanese-cuisine.jpeg';
+import pizza from '../../assets/images/slider/pizza-cuisine.jpg';
+
+const images = { ukraine, italia, georgia, japan, pizza };
 
 class MenuPage extends Component {
   state = {};
@@ -38,7 +49,13 @@ class MenuPage extends Component {
   }
 
   render() {
-    const { modal, signup, login, loader } = this.props;
+    const {
+      modal,
+      signup,
+      login,
+      loader,
+      location: { search },
+    } = this.props;
 
     return (
       <>
@@ -46,7 +63,14 @@ class MenuPage extends Component {
           <Loader />
         ) : (
           <div className={styles.wrapper}>
-            <h1>Menu</h1>
+            <div>
+              <img
+                src={images[getCategoryFromUrl(search)]}
+                alt=""
+                className={styles.image}
+              />
+            </div>
+            <Menu cuisine={getCategoryFromUrl(search)} />
             {modal && (
               <Modal>
                 {signup && <SignUp />}
