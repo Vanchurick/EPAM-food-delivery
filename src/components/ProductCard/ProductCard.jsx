@@ -9,8 +9,10 @@ import { addProduct } from '../../redux/actions/basketActions.';
 const ProductCard = ({ product, addProductToBasket }) => (
   <div className={styles.productCard}>
     <img src={logo} alt="" className={styles.image} />
-    <p className={styles.name}>{product.name}</p>
-    <p className={styles.price}>{product.price} UAH</p>
+    <div>
+      <p className={styles.name}>{product.name}</p>
+      <p className={styles.price}>{product.price} UAH</p>
+    </div>
     <Button
       className={styles.button}
       type="button"
