@@ -17,7 +17,7 @@ const ProductCard = ({ product, addProductToBasket }) => (
       className={styles.button}
       type="button"
       text="Add to basket"
-      func={() => addProductToBasket(product)}
+      func={() => addProductToBasket({ ...product, amount: 1 })}
     />
   </div>
 );

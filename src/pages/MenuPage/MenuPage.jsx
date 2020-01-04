@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import styles from './Menu.module.css';
+import styles from './MenuPage.module.css';
 import getMenu from '../../redux/operations/menuOperations';
 import {
   getLoader,
   getModal,
   getModalSignUp,
   getModalLogIn,
+  getBasket,
 } from '../../redux/selectors/selectors';
 
 import SignUp from '../../components/SignUp/SignUp';
@@ -16,8 +17,9 @@ import Modal from '../../components/Modal/Modal';
 import LogIn from '../../components/LogIn/LogIn';
 import Loader from '../../components/Loader/Loader';
 import Menu from '../../components/Menu/Menu';
+import Basket from '../../components/Basket/Basket';
 
-import getCategoryFromUrl from '../../helpers/helpers';
+import { getCategoryFromUrl } from '../../helpers/helpers';
 
 import ukraine from '../../assets/images/slider/ukrainian-cuisine.jpg';
 import italia from '../../assets/images/slider/italian-cuisine.jpg';
@@ -38,6 +40,7 @@ class MenuPage extends Component {
     signup: PropTypes.bool.isRequired,
     login: PropTypes.bool.isRequired,
     loader: PropTypes.bool.isRequired,
+    basket: PropTypes.arrayOf(PropTypes.object).isRequired,
   };
 
   componentDidMount() {
@@ -55,6 +58,7 @@ class MenuPage extends Component {
       login,
       loader,
       location: { search },
+      basket,
     } = this.props;
 
     return (
@@ -70,7 +74,14 @@ class MenuPage extends Component {
                 className={styles.image}
               />
             </div>
-            <Menu cuisine={getCategoryFromUrl(search)} />
+            <div className={styles.content}>
+              <Menu cuisine={getCategoryFromUrl(search)} />
+              {basket.length > 0 && (
+                <div className={styles.busketContainer}>
+                  <Basket />
+                </div>
+              )}
+            </div>
             {modal && (
               <Modal>
                 {signup && <SignUp />}
@@ -89,6 +100,7 @@ const mSTP = state => ({
   signup: getModalSignUp(state),
   login: getModalLogIn(state),
   loader: getLoader(state),
+  basket: getBasket(state),
 });
 
 const mDTP = dispatch => ({

@@ -7,6 +7,7 @@ import {
   getModal,
   getModalSignUp,
   getModalLogIn,
+  getModalBasket,
 } from '../../redux/selectors/selectors';
 
 import SignUp from '../../components/SignUp/SignUp';
@@ -17,6 +18,7 @@ import Slider from '../../components/Gallery/Gallery';
 import InputAdress from '../../components/InputAdress/InputAdress';
 import SelectCuisine from '../../components/SelectCuisine/SelectCuisine';
 import BasketButton from '../../components/BasketButton/BasketButton';
+import Basket from '../../components/Basket/Basket';
 
 import styles from './HomePage.module.css';
 
@@ -28,10 +30,11 @@ class HomePage extends Component {
     signup: PropTypes.bool.isRequired,
     login: PropTypes.bool.isRequired,
     loader: PropTypes.bool.isRequired,
+    basket: PropTypes.bool.isRequired,
   };
 
   render() {
-    const { modal, signup, login, loader } = this.props;
+    const { modal, signup, login, loader, basket } = this.props;
 
     return (
       <div className={styles.wrapper}>
@@ -51,6 +54,7 @@ class HomePage extends Component {
           <Modal>
             {signup && <SignUp />}
             {login && <LogIn />}
+            {basket && <Basket />}
           </Modal>
         )}
       </div>
@@ -63,6 +67,7 @@ const mSTP = state => ({
   signup: getModalSignUp(state),
   login: getModalLogIn(state),
   loader: getLoader(state),
+  basket: getModalBasket(state),
 });
 
 export default connect(mSTP, null)(HomePage);
