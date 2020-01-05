@@ -9,7 +9,6 @@ import {
   getModal,
   getModalSignUp,
   getModalLogIn,
-  getBasket,
 } from '../../redux/selectors/selectors';
 
 import SignUp from '../../components/SignUp/SignUp';
@@ -40,7 +39,6 @@ class MenuPage extends Component {
     signup: PropTypes.bool.isRequired,
     login: PropTypes.bool.isRequired,
     loader: PropTypes.bool.isRequired,
-    basket: PropTypes.arrayOf(PropTypes.object).isRequired,
   };
 
   componentDidMount() {
@@ -58,7 +56,6 @@ class MenuPage extends Component {
       login,
       loader,
       location: { search },
-      basket,
     } = this.props;
 
     return (
@@ -76,11 +73,9 @@ class MenuPage extends Component {
             </div>
             <div className={styles.content}>
               <Menu cuisine={getCategoryFromUrl(search)} />
-              {basket.length > 0 && (
-                <div className={styles.busketContainer}>
-                  <Basket />
-                </div>
-              )}
+              <div className={styles.busketContainer}>
+                <Basket />
+              </div>
             </div>
             {modal && (
               <Modal>
@@ -100,7 +95,6 @@ const mSTP = state => ({
   signup: getModalSignUp(state),
   login: getModalLogIn(state),
   loader: getLoader(state),
-  basket: getBasket(state),
 });
 
 const mDTP = dispatch => ({

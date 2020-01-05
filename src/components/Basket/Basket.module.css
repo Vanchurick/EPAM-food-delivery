@@ -43,3 +43,24 @@
   justify-content: space-between;
   padding: 10px;
 }
+
+.deleteBtn {
+  color: red;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: 2px solid red;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 0;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.deleteBtn:hover {
+  background-color: red;
+  color: #fff;
+  width: 25px;
+  height: 25px;
+}
