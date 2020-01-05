@@ -5,7 +5,7 @@ import deliveryman from '../../assets/images/deliverman.png';
 
 const MapSection = () => (
   <div className={styles.mapSection}>
-    <h2 className={styles.title}>Here we are!</h2>
+    <h2 className={styles.title}>We are here!</h2>
     <div className={styles.mapDelivery}>
       <div className={styles.mapContainer}>
         <GoogleMap />
