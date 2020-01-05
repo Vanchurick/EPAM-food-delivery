@@ -4,18 +4,20 @@ import PropTypes from 'prop-types';
 import logo from '../../assets/images/logo.png';
 import styles from './ProductCard.module.css';
 import Button from '../Button/Button';
-import { addProduct } from '../../redux/actions/basketActions.';
+import { addProduct } from '../../redux/actions/basketActions';
 
 const ProductCard = ({ product, addProductToBasket }) => (
   <div className={styles.productCard}>
     <img src={logo} alt="" className={styles.image} />
-    <p className={styles.name}>{product.name}</p>
-    <p className={styles.price}>{product.price} UAH</p>
+    <div>
+      <p className={styles.name}>{product.name}</p>
+      <p className={styles.price}>{product.price} UAH</p>
+    </div>
     <Button
       className={styles.button}
       type="button"
       text="Add to basket"
-      func={() => addProductToBasket(product)}
+      func={() => addProductToBasket({ ...product, amount: 1 })}
     />
   </div>
 );

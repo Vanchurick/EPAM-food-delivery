@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import styles from './Menu.module.css';
+import styles from './MenuPage.module.css';
 import getMenu from '../../redux/operations/menuOperations';
 import {
   getLoader,
@@ -16,8 +16,9 @@ import Modal from '../../components/Modal/Modal';
 import LogIn from '../../components/LogIn/LogIn';
 import Loader from '../../components/Loader/Loader';
 import Menu from '../../components/Menu/Menu';
+import Basket from '../../components/Basket/Basket';
 
-import getCategoryFromUrl from '../../helpers/helpers';
+import { getCategoryFromUrl } from '../../helpers/helpers';
 
 import ukraine from '../../assets/images/slider/ukrainian-cuisine.jpg';
 import italia from '../../assets/images/slider/italian-cuisine.jpg';
@@ -70,7 +71,12 @@ class MenuPage extends Component {
                 className={styles.image}
               />
             </div>
-            <Menu cuisine={getCategoryFromUrl(search)} />
+            <div className={styles.content}>
+              <Menu cuisine={getCategoryFromUrl(search)} />
+              <div className={styles.busketContainer}>
+                <Basket />
+              </div>
+            </div>
             {modal && (
               <Modal>
                 {signup && <SignUp />}

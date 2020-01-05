@@ -53,11 +53,14 @@ class Menu extends Component {
     } = this.props;
 
     return (
-      <div>
-        <h1 className={styles.title}>{cuisine}</h1>
+      <div className={styles.wrapper}>
+        <div className={styles.titleContainer}>
+          <h2 className={styles.title}>{cuisine}</h2>
+        </div>
+
         {drinks && (
-          <div>
-            <h2>Drinks:</h2>
+          <div className={styles.typeOfProducts}>
+            <h2 className={styles.productTitle}>Drinks:</h2>
             <div className={styles.productContainer}>
               {drinks.map(el => (
                 <ProductCard key={el.id} product={el} />
@@ -66,7 +69,7 @@ class Menu extends Component {
           </div>
         )}
         {sides && (
-          <div>
+          <div className={styles.typeOfProducts}>
             <h2>Sides:</h2>
             <div className={styles.productContainer}>
               {sides.map(el => (
@@ -76,7 +79,7 @@ class Menu extends Component {
           </div>
         )}
         {mainDishes && (
-          <div>
+          <div className={styles.typeOfProducts}>
             <h2>Main Dishes:</h2>
             <div className={styles.productContainer}>
               {mainDishes.map(el => (
@@ -86,7 +89,7 @@ class Menu extends Component {
           </div>
         )}
         {desserts && (
-          <div>
+          <div className={styles.typeOfProducts}>
             <h2>Desserts:</h2>
             <div className={styles.productContainer}>
               {desserts.map(el => (

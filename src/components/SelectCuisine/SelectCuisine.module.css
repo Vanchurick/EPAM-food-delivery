@@ -3,7 +3,15 @@
   justify-content: center;
   flex-wrap: wrap;
   width: 800px;
-  margin: 30px auto;
+  margin: 0px auto;
+}
+
+.wrapper {
+  height: 600px;
+  background-image: url('../../assets/images/bg.png');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .title {

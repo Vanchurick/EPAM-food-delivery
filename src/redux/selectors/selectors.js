@@ -23,3 +23,7 @@ export const getAdress = state => state.user.adress;
 // MENU
 
 export const getMenu = state => state.menu;
+
+// BASKET
+
+export const getBasket = state => state.basket;
