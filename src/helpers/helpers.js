@@ -5,3 +5,7 @@ export const getCategoryFromUrl = search => {
 export const isProductExistInBasket = (state, product) => {
   return state.find(el => el.id === product.id);
 };
+
+export const getCountOfProducts = basket => {
+  return basket.reduce((acc, el) => acc + el.amount, 0);
+};
