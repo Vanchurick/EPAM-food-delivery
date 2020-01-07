@@ -19,6 +19,8 @@ import InputAdress from '../../components/InputAdress/InputAdress';
 import SelectCuisine from '../../components/SelectCuisine/SelectCuisine';
 import BasketButton from '../../components/BasketButton/BasketButton';
 import Basket from '../../components/Basket/Basket';
+import MapSection from '../../components/MapSection/MapSection';
+import Footer from '../../components/Footer/Footer';
 
 import styles from './HomePage.module.css';
 
@@ -48,6 +50,8 @@ class HomePage extends Component {
             </div>
             <BasketButton />
             <SelectCuisine />
+            <MapSection />
+            <Footer />
           </div>
         )}
         {modal && (

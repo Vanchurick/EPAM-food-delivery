@@ -5,6 +5,7 @@ import Icon from '../Icon/Icon';
 import styles from './BasketButton.module.css';
 import { getBasket } from '../../redux/selectors/selectors';
 import { openModalBasket } from '../../redux/actions/modalActions';
+import { getCountOfProducts } from '../../helpers/helpers';
 
 const BasketButton = ({ basket, openBasket }) => (
   <div
@@ -17,7 +18,7 @@ const BasketButton = ({ basket, openBasket }) => (
     <div className={styles.iconContainer}>
       {basket.length !== 0 && (
         <div className={styles.numberContainer}>
-          <p className={styles.number}>{basket.length}</p>
+          <p className={styles.number}>{getCountOfProducts(basket)}</p>
         </div>
       )}
       <Icon icon="Basket" className={styles.icon} />
