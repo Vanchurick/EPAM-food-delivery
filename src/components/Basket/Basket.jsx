@@ -6,12 +6,13 @@ import { getBasket } from '../../redux/selectors/selectors';
 import styles from './Basket.module.css';
 import Button from '../Button/Button';
 import { removeProduct } from '../../redux/actions/basketActions';
+import { closeModal } from '../../redux/actions/modalActions';
 
 class Basket extends Component {
   state = {};
 
   render() {
-    const { basket, remove, path } = this.props;
+    const { basket, remove, path, toConfirm } = this.props;
 
     const totalPrice = basket.reduce((acc, el) => acc + el.price, 0);
     return (
@@ -45,7 +46,7 @@ class Basket extends Component {
                   text="Confirm order"
                   type="click"
                   className={styles.confirmButton}
-                  func={() => {}}
+                  func={toConfirm}
                 />
               </Link>
             )}
@@ -65,6 +66,7 @@ Basket.propTypes = {
   basket: PropTypes.arrayOf(PropTypes.object).isRequired,
   remove: PropTypes.func.isRequired,
   path: PropTypes.string,
+  toConfirm: PropTypes.func.isRequired,
 };
 
 Basket.defaultProps = {
@@ -77,6 +79,7 @@ const mSTP = state => ({
 
 const mDTP = dispatch => ({
   remove: id => dispatch(removeProduct(id)),
+  toConfirm: () => dispatch(closeModal()),
 });
 
 export default connect(mSTP, mDTP)(Basket);
