@@ -64,7 +64,11 @@ class Basket extends Component {
 Basket.propTypes = {
   basket: PropTypes.arrayOf(PropTypes.object).isRequired,
   remove: PropTypes.func.isRequired,
-  path: PropTypes.string.isRequired,
+  path: PropTypes.string,
+};
+
+Basket.defaultProps = {
+  path: '',
 };
 
 const mSTP = state => ({

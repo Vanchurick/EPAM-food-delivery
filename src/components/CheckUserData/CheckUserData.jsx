@@ -10,7 +10,7 @@ class CheckUserData extends Component {
   state = { name: '', email: '', adress: '' };
 
   static propTypes = {
-    user: PropTypes.shapeOf({
+    user: PropTypes.shape({
       name: PropTypes.string.isRequired,
       adress: PropTypes.string.isRequired,
       email: PropTypes.string.isRequired,
