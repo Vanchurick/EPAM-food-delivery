@@ -7,6 +7,8 @@ export const UserActionType = {
   LOG_IN_ERROR: 'LOG_IN_ERROR',
   LOG_OUT: 'LOG_OUT',
   SET_ADRESS: 'SET_ADRESS',
+  SET_NAME: 'SET_NAME',
+  SET_EMAIL: 'SET_EMAIL',
 };
 
 // Sign up user actioncreators
@@ -52,4 +54,14 @@ export const logOut = () => ({
 export const setAdress = adress => ({
   type: 'SET_ADRESS',
   payload: { adress },
+});
+
+export const setName = name => ({
+  type: 'SET_NAME',
+  payload: { name },
+});
+
+export const setEmail = email => ({
+  type: 'SET_EMAIL',
+  payload: { email },
 });

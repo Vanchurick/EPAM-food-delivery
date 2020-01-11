@@ -1,0 +1,27 @@
+.wrapper {
+  padding-top: 130px;
+  flex-grow: 1;
+}
+
+.content {
+  border: 1px solid black;
+  padding: 30px 0;
+}
+
+.title {
+  text-align: center;
+  font-size: 52px;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.data {
+  width: 35%;
+}
