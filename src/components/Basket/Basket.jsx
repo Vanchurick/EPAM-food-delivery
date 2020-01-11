@@ -14,7 +14,10 @@ class Basket extends Component {
   render() {
     const { basket, remove, path, toConfirm } = this.props;
 
-    const totalPrice = basket.reduce((acc, el) => acc + el.price, 0);
+    const totalPrice = basket.reduce(
+      (acc, el) => acc + el.price * el.amount,
+      0,
+    );
     return (
       <div className={styles.basket}>
         {basket.length > 0 ? (

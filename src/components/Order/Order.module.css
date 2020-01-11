@@ -25,3 +25,14 @@
 .data {
   width: 35%;
 }
+
+.button {
+  margin: 30px;
+  width: 400px;
+  height: 60px;
+  font-size: 24px;
+}
+
+.form {
+  text-align: center;
+}
