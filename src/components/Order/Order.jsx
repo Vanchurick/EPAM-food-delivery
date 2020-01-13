@@ -11,6 +11,7 @@ import { removeProduct } from '../../redux/actions/basketActions';
 import Basket from '../Basket/Basket';
 import CheckUserData from '../CheckUserData/CheckUserData';
 import Button from '../Button/Button';
+import confirmOrder from '../../redux/operations/orderOperations';
 
 import styles from './Order.module.css';
 
@@ -19,8 +20,8 @@ class Order extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const { user, basket } = this.props;
-    console.log({ ...user, order: basket });
+    const { user, basket, sendOrder } = this.props;
+    sendOrder({ ...user, order: basket });
   };
 
   render() {
@@ -57,9 +58,9 @@ Order.propTypes = {
   path: PropTypes.string.isRequired,
   autorization: PropTypes.bool.isRequired,
   user: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    email: PropTypes.string.isRequired,
-    adress: PropTypes.string.isRequired,
+    name: PropTypes.string,
+    email: PropTypes.string,
+    adress: PropTypes.string,
     autorization: PropTypes.bool.isRequired,
   }).isRequired,
   basket: PropTypes.arrayOf(
@@ -71,13 +72,8 @@ Order.propTypes = {
       amount: PropTypes.number.isRequired,
     }),
   ).isRequired,
+  sendOrder: PropTypes.func.isRequired,
 };
-
-// name(pin):"Вино домашнее красное"
-// price(pin):40
-// img(pin):""
-// id(pin):"qShXk7eShT"
-// amount(pin):1
 
 const mSTP = state => ({
   basket: getBasket(state),
@@ -87,6 +83,7 @@ const mSTP = state => ({
 
 const mDTP = dispatch => ({
   remove: id => dispatch(removeProduct(id)),
+  sendOrder: data => dispatch(confirmOrder(data)),
 });
 
 export default connect(mSTP, mDTP)(Order);
