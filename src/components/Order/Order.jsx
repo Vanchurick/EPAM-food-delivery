@@ -18,10 +18,11 @@ import styles from './Order.module.css';
 class Order extends Component {
   state = {};
 
-  handleSubmit = e => {
+  handleSubmit = async e => {
     e.preventDefault();
-    const { user, basket, sendOrder } = this.props;
-    sendOrder({ ...user, order: basket });
+    const { user, basket, sendOrder, history } = this.props;
+    await sendOrder({ ...user, order: basket });
+    history.push('/');
   };
 
   render() {

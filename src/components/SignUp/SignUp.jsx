@@ -5,8 +5,13 @@ import PropTypes from 'prop-types';
 import styles from './SignUp.module.css';
 import { closeModal } from '../../redux/actions/modalActions';
 import { signUpUser } from '../../redux/operations/userOperations';
+import * as notify from '../../helpers/notification';
 
 import Button from '../Button/Button';
+
+const regexp = {
+  email: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g,
+};
 
 class SignUp extends Component {
   state = {
@@ -22,9 +27,33 @@ class SignUp extends Component {
   };
 
   handleSubmit = e => {
+    e.preventDefault();
     const { closeModalWindow, signUp } = this.props;
 
-    e.preventDefault();
+    console.log(regexp.email.test(this.state.email));
+
+    if (!regexp.email.test(this.state.email)) {
+      console.log(!regexp.email.test(this.state.email));
+
+      notify.warn('Incorect email!');
+      return;
+    }
+
+    if (this.state.password.length < 8) {
+      notify.warn('Your password less then 8 symbols');
+      return;
+    }
+
+    if (this.state.password.length > 16) {
+      notify.warn('Your password more then 16 symbols');
+      return;
+    }
+
+    if (this.state.name.length < 3) {
+      notify.warn('Enter longer name');
+      return;
+    }
+
     signUp(this.state);
 
     closeModalWindow();
@@ -39,7 +68,7 @@ class SignUp extends Component {
         <label htmlFor="email">
           <p className={styles.label}> E-mail:</p>
           <input
-            type="email"
+            type="text"
             onChange={this.handleChange}
             name="email"
             value={email}
@@ -60,7 +89,6 @@ class SignUp extends Component {
             placeholder="8 symbols and more"
             className={styles.input}
             required
-            minLength="8"
           />
         </label>
         <label htmlFor="name">
@@ -74,7 +102,6 @@ class SignUp extends Component {
             id="name"
             placeholder="Jack or Jack Sparrow or Captan Jack Sparrow"
             className={styles.input}
-            minLength="2"
           />
         </label>
         <div className={styles.buttons}>
