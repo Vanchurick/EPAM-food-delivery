@@ -1,5 +1,6 @@
 import { UserActionType } from '../actions/userActions';
 import { MenuActionType } from '../actions/menuActions';
+import { OrderActionType } from '../actions/orderActions';
 
 const loaderReducer = (state = false, { type }) => {
   switch (type) {
@@ -20,6 +21,12 @@ const loaderReducer = (state = false, { type }) => {
     case MenuActionType.GET_MENU_SUCCESS:
       return false;
     case MenuActionType.GET_MENU_ERROR:
+      return false;
+    case OrderActionType.CONFIRM_ORDER_START:
+      return true;
+    case OrderActionType.CONFIRM_ORDER_SUCCESS:
+      return false;
+    case OrderActionType.CONFIRM_ORDER_ERROR:
       return false;
     default:
       return state;

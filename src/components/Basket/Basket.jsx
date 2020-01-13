@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getBasket } from '../../redux/selectors/selectors';
 import styles from './Basket.module.css';
 import Button from '../Button/Button';
 import { removeProduct } from '../../redux/actions/basketActions';
+import { closeModal } from '../../redux/actions/modalActions';
 
 class Basket extends Component {
   state = {};
 
   render() {
-    const { basket, remove } = this.props;
+    const { basket, remove, path, toConfirm } = this.props;
 
-    const totalPrice = basket.reduce((acc, el) => acc + el.price, 0);
-
+    const totalPrice = basket.reduce(
+      (acc, el) => acc + el.price * el.amount,
+      0,
+    );
     return (
       <div className={styles.basket}>
         {basket.length > 0 ? (
@@ -39,12 +43,16 @@ class Basket extends Component {
               <p>Total price:</p>
               <p>{totalPrice}</p>
             </div>
-            <Button
-              text="Confirm order"
-              type="click"
-              className={styles.confirmButton}
-              func={() => {}}
-            />
+            {path !== '/order' && (
+              <Link to="/order">
+                <Button
+                  text="Confirm order"
+                  type="click"
+                  className={styles.confirmButton}
+                  func={toConfirm}
+                />
+              </Link>
+            )}
           </div>
         ) : (
           <div>
@@ -60,6 +68,12 @@ class Basket extends Component {
 Basket.propTypes = {
   basket: PropTypes.arrayOf(PropTypes.object).isRequired,
   remove: PropTypes.func.isRequired,
+  path: PropTypes.string,
+  toConfirm: PropTypes.func.isRequired,
+};
+
+Basket.defaultProps = {
+  path: '',
 };
 
 const mSTP = state => ({
@@ -68,6 +82,7 @@ const mSTP = state => ({
 
 const mDTP = dispatch => ({
   remove: id => dispatch(removeProduct(id)),
+  toConfirm: () => dispatch(closeModal()),
 });
 
 export default connect(mSTP, mDTP)(Basket);

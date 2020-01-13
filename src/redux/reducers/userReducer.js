@@ -3,6 +3,7 @@ import { UserActionType } from '../actions/userActions';
 const initialState = {
   email: '',
   name: '',
+  adress: '',
   autorization: false,
 };
 
@@ -46,6 +47,10 @@ const userReducer = (state = initialState, { type, payload }) => {
       return { ...state, email: '', name: '', autorization: false };
     case UserActionType.SET_ADRESS:
       return { ...state, adress: payload.adress };
+    case UserActionType.SET_NAME:
+      return { ...state, name: payload.name };
+    case UserActionType.SET_EMAIL:
+      return { ...state, email: payload.email };
     default:
       return state;
   }

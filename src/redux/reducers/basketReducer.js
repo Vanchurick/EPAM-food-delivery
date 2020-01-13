@@ -12,7 +12,7 @@ const busketReducer = (state = [], { type, payload }) => {
       return [...state, payload.product];
     case BusketActionType.REMOVE_PRODUCT:
       return state.filter(el => {
-        if (el.amount > 1) {
+        if (el.id === payload.id && el.amount > 1) {
           const result = el;
           result.amount -= 1;
           return result;

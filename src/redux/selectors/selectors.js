@@ -14,6 +14,8 @@ export const getModalBasket = state => state.modal.basket;
 
 // USER DATA
 
+export const getUser = state => state.user;
+
 export const getName = state => state.user.name;
 
 export const getAutorization = state => state.user.autorization;
