@@ -6,12 +6,9 @@ import styles from './SignUp.module.css';
 import { closeModal } from '../../redux/actions/modalActions';
 import { signUpUser } from '../../redux/operations/userOperations';
 import * as notify from '../../helpers/notification';
+import { regexpEmail, regexpName } from '../../helpers/helpers';
 
 import Button from '../Button/Button';
-
-const regexp = {
-  email: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g,
-};
 
 class SignUp extends Component {
   state = {
@@ -29,28 +26,30 @@ class SignUp extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { closeModalWindow, signUp } = this.props;
+    const { email, password, name } = this.state;
 
-    console.log(regexp.email.test(this.state.email));
-
-    if (!regexp.email.test(this.state.email)) {
-      console.log(!regexp.email.test(this.state.email));
-
-      notify.warn('Incorect email!');
+    if (!regexpEmail.test(email)) {
+      notify.alert('Incorect email!');
       return;
     }
 
-    if (this.state.password.length < 8) {
-      notify.warn('Your password less then 8 symbols');
+    if (password.length < 8) {
+      notify.alert('Your password less then 8 symbols');
       return;
     }
 
-    if (this.state.password.length > 16) {
-      notify.warn('Your password more then 16 symbols');
+    if (password.length >= 16) {
+      notify.alert('Your password longer then 16 symbols');
       return;
     }
 
-    if (this.state.name.length < 3) {
-      notify.warn('Enter longer name');
+    if (name.length < 3) {
+      notify.alert('Enter longer name');
+      return;
+    }
+
+    if (!regexpName.test(name)) {
+      notify.alert('Enter correct name');
       return;
     }
 
@@ -86,7 +85,7 @@ class SignUp extends Component {
             name="password"
             value={password}
             id="password"
-            placeholder="8 symbols and more"
+            placeholder="8-16 symbols"
             className={styles.input}
             required
           />
@@ -100,7 +99,7 @@ class SignUp extends Component {
             name="name"
             value={name}
             id="name"
-            placeholder="Jack or Jack Sparrow or Captan Jack Sparrow"
+            placeholder="Jack Sparrow"
             className={styles.input}
           />
         </label>

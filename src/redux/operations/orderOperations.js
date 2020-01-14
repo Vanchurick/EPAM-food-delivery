@@ -12,7 +12,7 @@ const confirmOrder = credentials => dispatch => {
   axios
     .post('http://localhost:6060/order', credentials)
     .then(resp => {
-      notify.success('Order confirmed! Diliverman will be ASAP!');
+      notify.alert('Order confirmed! Diliverman will be ASAP!');
       dispatch(confirmOrderSuccess(resp.data));
     })
     .catch(err => {

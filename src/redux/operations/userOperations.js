@@ -16,12 +16,12 @@ export const signUpUser = credentials => dispatch => {
     .post('http://localhost:6060/signup', credentials)
     .then(resp => {
       if (resp.data.status === 'failed') {
-        notify.warn(resp.data.message);
+        notify.alert(resp.data.message);
         dispatch(signUpError(resp.data.message));
         return;
       }
 
-      notify.success(
+      notify.alert(
         `Wellcome to EPAM Food Delivery App, ${resp.data.user.name} `,
       );
       dispatch(signUpSuccess(resp.data));
@@ -39,12 +39,12 @@ export const loginUser = credentials => dispatch => {
     .post('http://localhost:6060/login', credentials)
     .then(resp => {
       if (!resp.data.login) {
-        notify.warn('Wrong email or password! Please, check it!');
+        notify.alert('Wrong email or password! Please, check it!');
         dispatch(signUpError('Failed login!'));
         return;
       }
 
-      notify.success(`Wellcome back, ${resp.data.user.name} `);
+      notify.alert(`Wellcome back, ${resp.data.user.name} `);
       dispatch(logInSuccess(resp.data));
     })
     .catch(error => {

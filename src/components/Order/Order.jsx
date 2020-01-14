@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import * as notify from '../../helpers/notification';
 
 import {
   getBasket,
@@ -21,6 +22,9 @@ class Order extends Component {
   handleSubmit = async e => {
     e.preventDefault();
     const { user, basket, sendOrder, history } = this.props;
+    if (basket.length === 0) {
+      notify.alert('Basket is empty!');
+    }
     await sendOrder({ ...user, order: basket });
     history.push('/');
   };
@@ -41,6 +45,7 @@ class Order extends Component {
                 <CheckUserData />
               </div>
             </div>
+
             <Button
               text="Confirm"
               type="submit"
@@ -48,6 +53,14 @@ class Order extends Component {
               className={styles.button}
               disabled={!autorization}
             />
+            {!autorization && (
+              <p>
+                <small>
+                  You need login before confirm order! After login your personal
+                  data will change like in database!
+                </small>
+              </p>
+            )}
           </form>
         </div>
       </div>

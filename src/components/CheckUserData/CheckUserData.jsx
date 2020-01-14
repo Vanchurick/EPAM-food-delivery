@@ -78,6 +78,7 @@ class CheckUserData extends Component {
           name="name"
           className={styles.input}
           onChange={this.handleChange}
+          placeholder="Enter your name..."
         />
         <input
           type="text"
@@ -85,6 +86,7 @@ class CheckUserData extends Component {
           name="email"
           className={styles.input}
           onChange={this.handleChange}
+          placeholder="Enter your email..."
         />
         <input
           type="text"
@@ -92,6 +94,7 @@ class CheckUserData extends Component {
           name="adress"
           className={styles.input}
           onChange={this.handleChange}
+          placeholder="Enter your adress..."
         />
       </div>
     );
