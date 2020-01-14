@@ -23,13 +23,14 @@ const OrderPage = ({
   signup,
   login,
   location: { pathname },
+  history,
 }) => (
   <>
     {loader ? (
       <Loader />
     ) : (
       <div className={styles.wrapper}>
-        <Order path={pathname} />
+        <Order path={pathname} history={history} />
         <Footer />
         {modal && (
           <Modal>
@@ -44,6 +45,11 @@ const OrderPage = ({
 
 OrderPage.propTypes = {
   loader: PropTypes.bool.isRequired,
+  modal: PropTypes.bool.isRequired,
+  signup: PropTypes.bool.isRequired,
+  login: PropTypes.bool.isRequired,
+  location: PropTypes.shape({ pathname: PropTypes.string.isRequired })
+    .isRequired,
 };
 
 const mSTP = state => ({

@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { loginUser } from '../../redux/operations/userOperations';
 import styles from './LogIn.module.css';
 import { closeModal } from '../../redux/actions/modalActions';
+import * as notify from '../../helpers/notification';
+import { regexpEmail } from '../../helpers/helpers';
 
 import Button from '../Button/Button';
 
@@ -18,8 +20,24 @@ class LogIn extends Component {
 
   handleSubmit = e => {
     const { logIn, closeModalWindow } = this.props;
+    const { email, password } = this.state;
 
     e.preventDefault();
+
+    if (!regexpEmail.test(email)) {
+      notify.alert('Incorect email!');
+      return;
+    }
+
+    if (password.length < 8) {
+      notify.alert('Your password less then 8 symbols');
+      return;
+    }
+
+    if (password.length >= 16) {
+      notify.alert('Your password longer then 16 symbols');
+      return;
+    }
 
     logIn(this.state);
 

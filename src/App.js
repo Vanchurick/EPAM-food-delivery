@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+
 import HomePage from './pages/HomePage/HomePage';
 import MenuPage from './pages/MenuPage/MenuPage';
 import OrderPage from './pages/OrderPage/OrderPage';
@@ -18,6 +20,7 @@ class App extends Component {
           <Route path="/order" component={OrderPage} />
           <Redirect push to="/" />
         </Switch>
+        <ToastContainer />
       </div>
     );
   }

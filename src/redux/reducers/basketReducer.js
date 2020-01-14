@@ -1,5 +1,6 @@
 import { BusketActionType } from '../actions/basketActions';
 import { isProductExistInBasket } from '../../helpers/helpers';
+import { OrderActionType } from '../actions/orderActions';
 
 const busketReducer = (state = [], { type, payload }) => {
   switch (type) {
@@ -19,6 +20,8 @@ const busketReducer = (state = [], { type, payload }) => {
         }
         return el.id !== payload.id;
       });
+    case OrderActionType.CONFIRM_ORDER_SUCCESS:
+      return [];
     default:
       return state;
   }

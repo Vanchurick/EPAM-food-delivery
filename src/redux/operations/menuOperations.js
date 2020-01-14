@@ -1,4 +1,5 @@
 import axios from 'axios';
+import * as notify from '../../helpers/notification';
 
 import {
   getMenuStart,
@@ -12,7 +13,10 @@ const getMenu = category => dispatch => {
   axios
     .get(GET_MENU_URL)
     .then(resp => dispatch(getMenuSuccess(resp.data)))
-    .catch(err => dispatch(getMenuError(err)));
+    .catch(err => {
+      notify.error(err.message);
+      dispatch(getMenuError(err.message));
+    });
 };
 
 export default getMenu;

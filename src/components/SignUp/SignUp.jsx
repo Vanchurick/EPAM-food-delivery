@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import styles from './SignUp.module.css';
 import { closeModal } from '../../redux/actions/modalActions';
 import { signUpUser } from '../../redux/operations/userOperations';
+import * as notify from '../../helpers/notification';
+import { regexpEmail, regexpName } from '../../helpers/helpers';
 
 import Button from '../Button/Button';
 
@@ -22,9 +24,35 @@ class SignUp extends Component {
   };
 
   handleSubmit = e => {
-    const { closeModalWindow, signUp } = this.props;
-
     e.preventDefault();
+    const { closeModalWindow, signUp } = this.props;
+    const { email, password, name } = this.state;
+
+    if (!regexpEmail.test(email)) {
+      notify.alert('Incorect email!');
+      return;
+    }
+
+    if (password.length < 8) {
+      notify.alert('Your password less then 8 symbols');
+      return;
+    }
+
+    if (password.length >= 16) {
+      notify.alert('Your password longer then 16 symbols');
+      return;
+    }
+
+    if (name.length < 3) {
+      notify.alert('Enter longer name');
+      return;
+    }
+
+    if (!regexpName.test(name)) {
+      notify.alert('Enter correct name');
+      return;
+    }
+
     signUp(this.state);
 
     closeModalWindow();
@@ -39,7 +67,7 @@ class SignUp extends Component {
         <label htmlFor="email">
           <p className={styles.label}> E-mail:</p>
           <input
-            type="email"
+            type="text"
             onChange={this.handleChange}
             name="email"
             value={email}
@@ -57,10 +85,9 @@ class SignUp extends Component {
             name="password"
             value={password}
             id="password"
-            placeholder="8 symbols and more"
+            placeholder="8-16 symbols"
             className={styles.input}
             required
-            minLength="8"
           />
         </label>
         <label htmlFor="name">
@@ -72,9 +99,8 @@ class SignUp extends Component {
             name="name"
             value={name}
             id="name"
-            placeholder="Jack or Jack Sparrow or Captan Jack Sparrow"
+            placeholder="Jack Sparrow"
             className={styles.input}
-            minLength="2"
           />
         </label>
         <div className={styles.buttons}>
