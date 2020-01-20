@@ -1,14 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import logo from '../../assets/images/logo.png';
 import styles from './ProductCard.module.css';
 import Button from '../Button/Button';
 import { addProduct } from '../../redux/actions/basketActions';
 
 const ProductCard = ({ product, addProductToBasket }) => (
   <div className={styles.productCard}>
-    <img src={logo} alt="" className={styles.image} />
+    <img src={product.img} alt="" className={styles.image} />
     <div>
       <p className={styles.name}>{product.name}</p>
       <p className={styles.price}>{product.price} UAH</p>

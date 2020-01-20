@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './SelectCuisine.module.css';
 
 import CuisineButton from '../CuisineButton/CuisineButton';
+import Button from '../Button/Button';
 
 import ukraine from '../../assets/images/cuisine buttons/ukraine.jpg';
 import georgia from '../../assets/images/cuisine buttons/georgia.jpg';
@@ -33,6 +34,9 @@ const SelectCuisine = () => (
         );
       })}
     </div>
+    <Link to="/lunches">
+      <Button text="Lunches" type="button" className={styles.button} />
+    </Link>
   </div>
 );
 

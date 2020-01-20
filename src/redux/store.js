@@ -6,6 +6,7 @@ import modalReducer from './reducers/modalReducer';
 import loaderReducer from './reducers/loaderReducer';
 import menuReducer from './reducers/menuReducer';
 import basketReducer from './reducers/basketReducer';
+import lunchesReducer from './reducers/lunchesReducer';
 
 const rootReducer = combineReducers({
   user: userReducer,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   loader: loaderReducer,
   menu: menuReducer,
   basket: basketReducer,
+  lunches: lunchesReducer,
 });
 
 const middleWares = [thunk];
