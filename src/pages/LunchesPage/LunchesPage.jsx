@@ -5,6 +5,7 @@ import {
   getModal,
   getModalSignUp,
   getModalLogIn,
+  getModalBasket,
 } from '../../redux/selectors/selectors';
 import styles from './LunchesPage.module.css';
 
@@ -14,6 +15,8 @@ import SignUp from '../../components/SignUp/SignUp';
 import LogIn from '../../components/LogIn/LogIn';
 import Lunches from '../../components/Lunches/Lunches';
 import Pagination from '../../components/Pagination/Pagination';
+import BasketButton from '../../components/BasketButton/BasketButton';
+import Basket from '../../components/Basket/Basket';
 
 class LunchesPage extends Component {
   state = {};
@@ -29,7 +32,7 @@ class LunchesPage extends Component {
   };
 
   render() {
-    const { modal, signup, login } = this.props;
+    const { modal, signup, login, basket } = this.props;
 
     return (
       <div className={styles.wrapper}>
@@ -37,11 +40,13 @@ class LunchesPage extends Component {
           <Lunches />
           <Pagination onClick={this.getLucnhesFromPage} />
         </div>
+        <BasketButton />
         <Footer />
         {modal && (
           <Modal>
             {signup && <SignUp />}
             {login && <LogIn />}
+            {basket && <Basket />}
           </Modal>
         )}
       </div>
@@ -54,6 +59,7 @@ const mSTP = state => ({
   modal: getModal(state),
   signup: getModalSignUp(state),
   login: getModalLogIn(state),
+  basket: getModalBasket(state),
 });
 
 const mDTP = dispatch => ({
