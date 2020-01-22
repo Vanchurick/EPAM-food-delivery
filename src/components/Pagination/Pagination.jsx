@@ -13,7 +13,7 @@ const Pagination = ({ page, items, onClick, previousPage, nextPage }) => (
       -
     </button>
     <p className={styles.page}>
-      {page}/{items / 3}
+      {page}/{Math.ceil(items / 3)}
     </p>
     <button
       className={styles.btn}

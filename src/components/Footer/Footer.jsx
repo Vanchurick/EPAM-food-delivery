@@ -1,8 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
+// components
+
 import Icon from '../Icon/Icon';
-import styles from './Footer.module.css';
+
+// images
+
 import logo from '../../assets/images/logo.png';
+
+// css
+
+import styles from './Footer.module.css';
 
 const socialTitleStyles = [styles.contactsTitle, styles.socialTitle];
 

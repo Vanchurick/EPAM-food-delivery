@@ -1,6 +1,12 @@
 import React from 'react';
 import Spin from 'react-reveal/Spin';
+
+// images
+
 import logo from '../../assets/images/logo.png';
+
+// css
+
 import styles from './Loader.module.css';
 
 const Loader = () => (
@@ -10,4 +16,5 @@ const Loader = () => (
     </div>
   </Spin>
 );
+
 export default Loader;

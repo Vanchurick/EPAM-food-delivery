@@ -2,9 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import debounce from 'lodash/debounce';
+
+// redux
+
 import { setAdress } from '../../redux/actions/userActions';
-import styles from './InputAdress.module.css';
 import { getAdress } from '../../redux/selectors/selectors';
+
+// css
+
+import styles from './InputAdress.module.css';
 
 class InputAdress extends Component {
   state = { value: '' };

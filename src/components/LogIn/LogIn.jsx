@@ -1,20 +1,35 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+
+// redux
+
 import { loginUser } from '../../redux/operations/userOperations';
-import styles from './LogIn.module.css';
 import { closeModal } from '../../redux/actions/modalActions';
+
+// helpers
+
 import * as notify from '../../helpers/notification';
 import { regexpEmail } from '../../helpers/helpers';
 
+// components
+
 import Button from '../Button/Button';
+
+// css
+
+import styles from './LogIn.module.css';
 
 class LogIn extends Component {
   state = { email: '', password: '' };
 
+  static propTypes = {
+    closeModalWindow: PropTypes.func.isRequired,
+    logIn: PropTypes.func.isRequired,
+  };
+
   handleChange = e => {
     const { name, value } = e.target;
-
     this.setState({ [name]: value });
   };
 
@@ -83,11 +98,6 @@ class LogIn extends Component {
     );
   }
 }
-
-LogIn.propTypes = {
-  closeModalWindow: PropTypes.func.isRequired,
-  logIn: PropTypes.func.isRequired,
-};
 
 const mDTP = dispatch => ({
   closeModalWindow: () => dispatch(closeModal()),

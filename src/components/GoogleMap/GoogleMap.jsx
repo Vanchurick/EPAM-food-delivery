@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 
 const mapStyles = {
@@ -6,28 +6,18 @@ const mapStyles = {
   height: '100%',
 };
 
-class GoogleMap extends Component {
-  state = {};
+/* eslint-disable */
 
-  render() {
-    /* eslint-disable */
-
-    const { google } = this.props;
-
-    /* eslint-enable */
-
-    return (
-      <Map
-        google={google}
-        zoom={12}
-        style={mapStyles}
-        initialCenter={{ lat: 50.4314045, lng: 30.4868085 }}
-      >
-        <Marker position={{ lat: 50.4314045, lng: 30.4868085 }} />
-      </Map>
-    );
-  }
-}
+const GoogleMap = ({ google }) => (
+  <Map
+    google={google}
+    zoom={12}
+    style={mapStyles}
+    initialCenter={{ lat: 50.4314045, lng: 30.4868085 }}
+  >
+    <Marker position={{ lat: 50.4314045, lng: 30.4868085 }} />
+  </Map>
+);
 
 export default GoogleApiWrapper({
   apiKey: 'AIzaSyDSTKMVA3edG2DOBWAR-nff1yhzbP-UDE4',

@@ -1,11 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
+// redux
+
 import { getLoader } from '../../redux/selectors/selectors';
+
+// components
+
 import Loader from '../Loader/Loader';
-import styles from './Lunches.module.css';
 import LunchCard from '../LunchCard/LunchCard';
 
-const Lunches = ({ lunches = [], loader }) => (
+// css
+
+import styles from './Lunches.module.css';
+
+const Lunches = ({ lunches, loader }) => (
   <div className={styles.container}>
     {loader ? (
       <Loader />
@@ -18,6 +28,29 @@ const Lunches = ({ lunches = [], loader }) => (
     )}
   </div>
 );
+
+Lunches.propTypes = {
+  lunches: PropTypes.arrayOf(
+    PropTypes.shape({
+      category: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+      menu: PropTypes.arrayOf(
+        PropTypes.shape({
+          name: PropTypes.string.isRequired,
+          price: PropTypes.number.isRequired,
+          img: PropTypes.string.isRequired,
+          id: PropTypes.string.isRequired,
+        }),
+      ).isRequired,
+    }),
+  ),
+  loader: PropTypes.bool.isRequired,
+};
+
+Lunches.defaultProps = {
+  lunches: [],
+};
 
 const mSTP = state => ({
   lunches: state.lunches.result,

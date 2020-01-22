@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
+// css
+
 import style from './Button.module.css';
 
 const Button = ({ text, type, func, className, disabled }) => {
@@ -27,7 +30,7 @@ const Button = ({ text, type, func, className, disabled }) => {
 Button.propTypes = {
   text: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
-  func: PropTypes.func.isRequired,
+  func: PropTypes.func,
   className: PropTypes.string,
   disabled: PropTypes.bool,
 };
@@ -35,6 +38,7 @@ Button.propTypes = {
 Button.defaultProps = {
   className: '',
   disabled: false,
+  func: () => {},
 };
 
 export default Button;

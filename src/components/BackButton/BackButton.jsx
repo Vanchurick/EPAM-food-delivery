@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
+
+// components
+
 import Icon from '../Icon/Icon';
+
+// css
+
 import styles from './BackButton.module.css';
 
-class BackButton extends Component {
-  state = {};
-
-  render() {
-    return (
-      <Link to="/">
-        <div className={styles.iconContainer}>
-          <Icon icon="Back" className={styles.icon} />
-        </div>
-      </Link>
-    );
-  }
-}
+const BackButton = () => (
+  <Link to="/">
+    <div className={styles.iconContainer}>
+      <Icon icon="Back" className={styles.icon} />
+    </div>
+  </Link>
+);
 
 export default BackButton;

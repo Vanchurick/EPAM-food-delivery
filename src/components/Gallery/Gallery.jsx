@@ -2,13 +2,18 @@ import React, { Component } from 'react';
 import makeCarousel from 'react-reveal/makeCarousel';
 import Slide from 'react-reveal/Slide';
 import styled from 'styled-components';
-import style from './Gallery.module.css';
+
+// images
 
 import ukrainianCuisine from '../../assets/images/slider/ukrainian-cuisine.jpg';
 import italianCuisine from '../../assets/images/slider/italian-cuisine.jpg';
 import georgianCuisine from '../../assets/images/slider/georgian-cuisine.jpg';
 import japaneseCuisine from '../../assets/images/slider/japanese-cuisine.jpeg';
 import pizzaCuisine from '../../assets/images/slider/pizza-cuisine.jpg';
+
+// css
+
+import style from './Gallery.module.css';
 
 class Slider extends Component {
   state = {};
