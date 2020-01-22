@@ -1,13 +1,26 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+
+// redux
+
 import { getMenu } from '../../redux/selectors/selectors';
+
+// components
+
 import ProductCard from '../ProductCard/ProductCard';
-import styles from './Menu.module.css';
 import Icon from '../Icon/Icon';
 
+// css
+
+import styles from './Menu.module.css';
+
 class Menu extends Component {
-  state = {};
+  state = {
+    menu: this.props.menu,
+    items: Object.keys(this.props.menu),
+    filter: '',
+  };
 
   static propTypes = {
     cuisine: PropTypes.string.isRequired,
@@ -47,59 +60,60 @@ class Menu extends Component {
     }).isRequired,
   };
 
+  handleChange = e => {
+    const { menu } = this.props;
+
+    if (e.target.value === 'all') {
+      this.setState({ menu, filter: e.target.value, items: Object.keys(menu) });
+      return;
+    }
+
+    this.setState({
+      menu: { [e.target.value]: menu[e.target.value] },
+      items: [e.target.value],
+      filter: e.target.value,
+    });
+  };
+
+  handleOnBlur = () => {};
+
   render() {
-    const {
-      menu: { drinks, sides, mainDishes, desserts },
-      cuisine,
-    } = this.props;
+    const { cuisine } = this.props;
+
+    const keys = Object.keys(this.props.menu);
+
+    const { menu, items, filter } = this.state;
 
     return (
       <div className={styles.wrapper}>
         <div className={styles.titleContainer}>
           <h2 className={styles.title}>{cuisine}</h2>
           <Icon icon={`${cuisine}`} className={styles.icon} />
+          <select
+            name="type"
+            value={filter}
+            onBlur={this.handleOnBlur}
+            onChange={this.handleChange}
+          >
+            <option value="all">all</option>
+            {keys.map(el => (
+              <option key={el} value={el}>
+                {el}
+              </option>
+            ))}
+          </select>
         </div>
         <div className={styles.allProducts}>
-          {drinks && (
-            <div className={styles.typeOfProducts}>
-              <h2 className={styles.productTitle}>Drinks:</h2>
+          {items.map(key => (
+            <div key={key} className={styles.typeOfProducts}>
+              <h2 className={styles.productTitle}>{key}:</h2>
               <div className={styles.productContainer}>
-                {drinks.map(el => (
+                {menu[key].map(el => (
                   <ProductCard key={el.id} product={el} />
                 ))}
               </div>
             </div>
-          )}
-          {sides && (
-            <div className={styles.typeOfProducts}>
-              <h2>Sides:</h2>
-              <div className={styles.productContainer}>
-                {sides.map(el => (
-                  <ProductCard key={el.id} product={el} />
-                ))}
-              </div>
-            </div>
-          )}
-          {mainDishes && (
-            <div className={styles.typeOfProducts}>
-              <h2>Main Dishes:</h2>
-              <div className={styles.productContainer}>
-                {mainDishes.map(el => (
-                  <ProductCard key={el.id} product={el} />
-                ))}
-              </div>
-            </div>
-          )}
-          {desserts && (
-            <div className={styles.typeOfProducts}>
-              <h2>Desserts:</h2>
-              <div className={styles.productContainer}>
-                {desserts.map(el => (
-                  <ProductCard key={el.id} product={el} />
-                ))}
-              </div>
-            </div>
-          )}
+          ))}
         </div>
       </div>
     );

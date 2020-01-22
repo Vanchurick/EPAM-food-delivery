@@ -19,13 +19,14 @@ import styles from './Order.module.css';
 class Order extends Component {
   state = {};
 
-  handleSubmit = async e => {
+  handleSubmit = e => {
     e.preventDefault();
     const { user, basket, sendOrder, history } = this.props;
     if (basket.length === 0) {
       notify.alert('Basket is empty!');
+      return;
     }
-    await sendOrder({ ...user, order: basket });
+    sendOrder({ ...user, order: basket });
     history.push('/');
   };
 

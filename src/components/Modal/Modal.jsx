@@ -1,15 +1,31 @@
 import React, { Component, createRef } from 'react';
 import { connect } from 'react-redux';
-
 import PropTypes from 'prop-types';
-import styles from './Modal.module.css';
+
+// redux
 
 import { closeModal } from '../../redux/actions/modalActions';
+
+// css
+
+import styles from './Modal.module.css';
 
 class Modal extends Component {
   state = {};
 
   backdropeRef = createRef();
+
+  static propTypes = {
+    children: PropTypes.arrayOf(propValue => {
+      propValue.forEach(el => {
+        if (typeof el !== 'boolean' || typeof el !== 'object') {
+          return new Error('Проп имеет неправильное значение');
+        }
+        return el;
+      });
+    }).isRequired,
+    closeModalWindow: PropTypes.func.isRequired,
+  };
 
   componentDidMount() {
     window.addEventListener('keydown', this.handleKeyPress);
@@ -52,17 +68,17 @@ class Modal extends Component {
   }
 }
 
-Modal.propTypes = {
-  children: PropTypes.arrayOf(propValue => {
-    propValue.forEach(el => {
-      if (typeof el !== 'boolean' || typeof el !== 'object') {
-        return new Error('Проп имеет неправильное значение');
-      }
-      return el;
-    });
-  }).isRequired,
-  closeModalWindow: PropTypes.func.isRequired,
-};
+// Modal.propTypes = {
+//   children: PropTypes.arrayOf(propValue => {
+//     propValue.forEach(el => {
+//       if (typeof el !== 'boolean' || typeof el !== 'object') {
+//         return new Error('Проп имеет неправильное значение');
+//       }
+//       return el;
+//     });
+//   }).isRequired,
+//   closeModalWindow: PropTypes.func.isRequired,
+// };
 
 const mDTP = dispatch => ({
   closeModalWindow: () => dispatch(closeModal()),

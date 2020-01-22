@@ -2,9 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import debounce from 'lodash/debounce';
 import PropTypes from 'prop-types';
-import styles from './CheckUserData.module.css';
+
+// redux
+
 import { getUser } from '../../redux/selectors/selectors';
 import { setAdress, setName, setEmail } from '../../redux/actions/userActions';
+
+// css
+
+import styles from './CheckUserData.module.css';
 
 class CheckUserData extends Component {
   state = { name: '', email: '', adress: '' };

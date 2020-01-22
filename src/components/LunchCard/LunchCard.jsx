@@ -1,8 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import styles from './LunchCard.module.css';
-import Button from '../Button/Button';
+import PropTypes from 'prop-types';
+
+// redux
+
 import { addProduct } from '../../redux/actions/basketActions';
+
+// components
+
+import Button from '../Button/Button';
+
+// css
+
+import styles from './LunchCard.module.css';
 
 const LunchCard = ({ lunch, addProductToBasket }) => {
   const sum = lunch.menu.reduce((acc, el) => acc + el.price, 0);
@@ -36,6 +46,23 @@ const LunchCard = ({ lunch, addProductToBasket }) => {
       />
     </div>
   );
+};
+
+LunchCard.propTypes = {
+  addProductToBasket: PropTypes.func.isRequired,
+  lunch: PropTypes.shape({
+    category: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+    menu: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        img: PropTypes.string.isRequired,
+        id: PropTypes.string.isRequired,
+      }),
+    ).isRequired,
+  }).isRequired,
 };
 
 const mDTP = dispatch => ({

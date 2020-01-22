@@ -1,11 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Icon from '../Icon/Icon';
-import styles from './BasketButton.module.css';
+
+// redux
+
 import { getBasket } from '../../redux/selectors/selectors';
 import { openModalBasket } from '../../redux/actions/modalActions';
+
+// helpers
+
 import { getCountOfProducts } from '../../helpers/helpers';
+
+// components
+
+import Icon from '../Icon/Icon';
+
+// css
+
+import styles from './BasketButton.module.css';
 
 const BasketButton = ({ basket, openBasket }) => (
   <div
