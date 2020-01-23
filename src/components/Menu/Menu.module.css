@@ -57,3 +57,19 @@
   box-shadow: 0 0 5px 2px black;
   border-radius: 50%;
 }
+
+.select {
+  width: 300px;
+  height: 40px;
+  border-radius: 20px;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-left: auto;
+  border: none;
+  box-shadow: 0 0 5px 2px black;
+}
+
+.select:focus {
+  outline: none;
+}

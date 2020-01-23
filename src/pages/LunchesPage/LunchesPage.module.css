@@ -7,4 +7,46 @@
 .content {
   flex-grow: 1;
   padding-top: 150px;
+  background-color: #000;
+}
+
+.select {
+  width: 300px;
+  height: 40px;
+  border-radius: 20px;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-left: auto;
+  border: none;
+  box-shadow: 0 0 5px 2px black;
+}
+
+.select:focus {
+  outline: none;
+}
+
+.radio {
+  display: none;
+}
+
+.label {
+  color: #fff;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.filters {
+  width: 50%;
+  padding: 10px;
+  margin: 0px auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.checked {
+  color: red;
+  cursor: pointer;
+  margin: 0 10px;
 }

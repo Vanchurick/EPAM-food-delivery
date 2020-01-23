@@ -90,14 +90,17 @@ class Menu extends Component {
           <h2 className={styles.title}>{cuisine}</h2>
           <Icon icon={`${cuisine}`} className={styles.icon} />
           <select
+            className={styles.select}
             name="type"
             value={filter}
             onBlur={this.handleOnBlur}
             onChange={this.handleChange}
           >
-            <option value="all">all</option>
+            <option value="all" className={styles.select}>
+              Select category
+            </option>
             {keys.map(el => (
-              <option key={el} value={el}>
+              <option key={el} value={el} className={styles.select}>
                 {el}
               </option>
             ))}

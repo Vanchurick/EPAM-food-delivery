@@ -50,6 +50,7 @@ OrderPage.propTypes = {
   login: PropTypes.bool.isRequired,
   location: PropTypes.shape({ pathname: PropTypes.string.isRequired })
     .isRequired,
+  history: PropTypes.shape({ push: PropTypes.func.isRequired }).isRequired,
 };
 
 const mSTP = state => ({

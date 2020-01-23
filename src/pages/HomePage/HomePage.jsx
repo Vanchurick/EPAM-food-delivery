@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+// redux
+
 import {
   getLoader,
   getModal,
@@ -9,6 +11,8 @@ import {
   getModalLogIn,
   getModalBasket,
 } from '../../redux/selectors/selectors';
+
+// components
 
 import SignUp from '../../components/SignUp/SignUp';
 import Modal from '../../components/Modal/Modal';
@@ -21,6 +25,8 @@ import BasketButton from '../../components/BasketButton/BasketButton';
 import Basket from '../../components/Basket/Basket';
 import MapSection from '../../components/MapSection/MapSection';
 import Footer from '../../components/Footer/Footer';
+
+// css
 
 import styles from './HomePage.module.css';
 
