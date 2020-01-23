@@ -1,9 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import styles from './ProductCard.module.css';
-import Button from '../Button/Button';
+
+// redux
+
 import { addProduct } from '../../redux/actions/basketActions';
+
+// components
+
+import Button from '../Button/Button';
+
+// css
+
+import styles from './ProductCard.module.css';
 
 const ProductCard = ({ product, addProductToBasket }) => (
   <div className={styles.productCard}>

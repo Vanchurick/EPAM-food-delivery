@@ -2,9 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import styles from './SignUp.module.css';
+// redux
+
 import { closeModal } from '../../redux/actions/modalActions';
 import { signUpUser } from '../../redux/operations/userOperations';
+
+// css
+
+import styles from './SignUp.module.css';
+
+// helpers
+
 import * as notify from '../../helpers/notification';
 import { regexpEmail, regexpName } from '../../helpers/helpers';
 

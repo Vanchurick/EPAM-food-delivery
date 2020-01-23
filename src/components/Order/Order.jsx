@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import * as notify from '../../helpers/notification';
+
+// redux
 
 import {
   getBasket,
@@ -9,10 +10,19 @@ import {
   getAutorization,
 } from '../../redux/selectors/selectors';
 import { removeProduct } from '../../redux/actions/basketActions';
+import confirmOrder from '../../redux/operations/orderOperations';
+
+// components
+
 import Basket from '../Basket/Basket';
 import CheckUserData from '../CheckUserData/CheckUserData';
 import Button from '../Button/Button';
-import confirmOrder from '../../redux/operations/orderOperations';
+
+// helpers
+
+import * as notify from '../../helpers/notification';
+
+// css
 
 import styles from './Order.module.css';
 
@@ -24,6 +34,11 @@ class Order extends Component {
     const { user, basket, sendOrder, history } = this.props;
     if (basket.length === 0) {
       notify.alert('Basket is empty!');
+      return;
+    }
+
+    if (user.adress.length === 0) {
+      notify.alert('Adress is empty!');
       return;
     }
     sendOrder({ ...user, order: basket });
@@ -82,12 +97,12 @@ Order.propTypes = {
     PropTypes.shape({
       name: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
-      img: PropTypes.string.isRequired,
       id: PropTypes.string.isRequired,
       amount: PropTypes.number.isRequired,
     }),
   ).isRequired,
   sendOrder: PropTypes.func.isRequired,
+  history: PropTypes.shape({ push: PropTypes.func.isRequired }).isRequired,
 };
 
 const mSTP = state => ({

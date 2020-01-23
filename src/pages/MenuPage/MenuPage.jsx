@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+// css
+
 import styles from './MenuPage.module.css';
+
+// redux
+
 import getMenu from '../../redux/operations/menuOperations';
 import {
   getLoader,
@@ -10,6 +15,8 @@ import {
   getModalSignUp,
   getModalLogIn,
 } from '../../redux/selectors/selectors';
+
+// components
 
 import SignUp from '../../components/SignUp/SignUp';
 import Modal from '../../components/Modal/Modal';
@@ -19,6 +26,8 @@ import Menu from '../../components/Menu/Menu';
 import Basket from '../../components/Basket/Basket';
 import Footer from '../../components/Footer/Footer';
 import BackButton from '../../components/BackButton/BackButton';
+
+// helpers
 
 import { getCategoryFromUrl } from '../../helpers/helpers';
 

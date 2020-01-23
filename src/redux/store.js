@@ -7,6 +7,7 @@ import loaderReducer from './reducers/loaderReducer';
 import menuReducer from './reducers/menuReducer';
 import basketReducer from './reducers/basketReducer';
 import lunchesReducer from './reducers/lunchesReducer';
+import errorReducer from './reducers/errorReducer';
 
 const rootReducer = combineReducers({
   user: userReducer,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   menu: menuReducer,
   basket: basketReducer,
   lunches: lunchesReducer,
+  error: errorReducer,
 });
 
 const middleWares = [thunk];

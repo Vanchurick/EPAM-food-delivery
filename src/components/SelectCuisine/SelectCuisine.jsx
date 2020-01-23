@@ -1,9 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styles from './SelectCuisine.module.css';
+
+// components
 
 import CuisineButton from '../CuisineButton/CuisineButton';
 import Button from '../Button/Button';
+
+// css
+
+import styles from './SelectCuisine.module.css';
+
+// images
 
 import ukraine from '../../assets/images/cuisine buttons/ukraine.jpg';
 import georgia from '../../assets/images/cuisine buttons/georgia.jpg';

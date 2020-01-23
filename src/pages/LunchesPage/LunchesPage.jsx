@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
+// redux
+
 import lunchesRequest from '../../redux/operations/lunchesOperations';
 import {
   getModal,
@@ -7,7 +11,12 @@ import {
   getModalLogIn,
   getModalBasket,
 } from '../../redux/selectors/selectors';
+
+// css
+
 import styles from './LunchesPage.module.css';
+
+// components
 
 import Footer from '../../components/Footer/Footer';
 import Modal from '../../components/Modal/Modal';
@@ -25,6 +34,14 @@ const SORT = {
 
 class LunchesPage extends Component {
   state = { sort: '', page: 1, category: '' };
+
+  static propTypes = {
+    getLunches: PropTypes.func.isRequired,
+    modal: PropTypes.bool.isRequired,
+    signup: PropTypes.bool.isRequired,
+    login: PropTypes.bool.isRequired,
+    basket: PropTypes.bool.isRequired,
+  };
 
   componentDidMount() {
     const { getLunches } = this.props;
@@ -51,41 +68,55 @@ class LunchesPage extends Component {
     return (
       <div className={styles.wrapper}>
         <div className={styles.content}>
-          <label htmlFor="expensive">
-            Expensive
-            <input
-              type="radio"
-              checked={sort === SORT.EXPENSIVE}
-              name="sort"
-              value={SORT.EXPENSIVE}
+          <div className={styles.filters}>
+            <label
+              htmlFor="expensive"
+              className={
+                sort === SORT.EXPENSIVE ? styles.checked : styles.label
+              }
+            >
+              Expensive
+              <input
+                className={styles.radio}
+                type="radio"
+                checked={sort === SORT.EXPENSIVE}
+                name="sort"
+                value={SORT.EXPENSIVE}
+                onChange={this.handleChange}
+                id="expensive"
+              />
+            </label>
+            <label
+              htmlFor="cheap"
+              className={sort === SORT.CHEAP ? styles.checked : styles.label}
+            >
+              Cheap
+              <input
+                className={styles.radio}
+                type="radio"
+                checked={sort === SORT.CHEAP}
+                name="sort"
+                value={SORT.CHEAP}
+                onChange={this.handleChange}
+                id="cheap"
+              />
+            </label>
+            <select
+              className={styles.select}
+              name="category"
+              value={category}
+              onBlur={this.handleOnBlur}
               onChange={this.handleChange}
-              id="expensive"
-            />
-          </label>
-          <label htmlFor="cheap">
-            Cheap
-            <input
-              type="radio"
-              checked={sort === SORT.CHEAP}
-              name="sort"
-              value={SORT.CHEAP}
-              onChange={this.handleChange}
-              id="cheap"
-            />
-          </label>
-          <select
-            name="category"
-            value={category}
-            onBlur={this.handleOnBlur}
-            onChange={this.handleChange}
-          >
-            <option value="">all</option>
-            <option value="ukraine">Ukraine</option>
-            <option value="italy">Italy</option>
-            <option value="georgia">Georgia</option>
-            <option value="pizza">Pizza</option>
-            <option value="japan">Japan</option>
-          </select>
+            >
+              <option value="">all</option>
+              <option value="ukraine">Ukraine</option>
+              <option value="italy">Italy</option>
+              <option value="georgia">Georgia</option>
+              <option value="pizza">Pizza</option>
+              <option value="japan">Japan</option>
+            </select>
+          </div>
+
           <Lunches />
           <Pagination onClick={this.getLucnhesFromPage} />
         </div>
