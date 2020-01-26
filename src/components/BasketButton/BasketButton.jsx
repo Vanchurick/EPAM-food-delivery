@@ -17,24 +17,22 @@ import Icon from '../Icon/Icon';
 
 // css
 
-import styles from './BasketButton.module.css';
+import styles from './BasketButtonSCSS.module.scss';
 
 const BasketButton = ({ basket, openBasket }) => (
   <div
-    className={styles.wrapper}
+    className={styles.iconContainer}
     onClick={openBasket}
     onKeyDown={openBasket}
     role="button"
     tabIndex="0"
   >
-    <div className={styles.iconContainer}>
-      {basket.length !== 0 && (
-        <div className={styles.numberContainer}>
-          <p className={styles.number}>{getCountOfProducts(basket)}</p>
-        </div>
-      )}
-      <Icon icon="Basket" className={styles.icon} />
-    </div>
+    {basket.length !== 0 && (
+      <div className={styles.numberContainer}>
+        <p className={styles.number}>{getCountOfProducts(basket)}</p>
+      </div>
+    )}
+    <Icon icon="Basket" className={styles.icon} />
   </div>
 );
 

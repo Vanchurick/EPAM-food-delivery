@@ -13,7 +13,7 @@ import Icon from '../Icon/Icon';
 
 // css
 
-import styles from './Menu.module.css';
+import styles from './Menu.module.scss';
 
 class Menu extends Component {
   state = {

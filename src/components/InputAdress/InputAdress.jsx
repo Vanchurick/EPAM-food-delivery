@@ -10,15 +10,13 @@ import { getAdress } from '../../redux/selectors/selectors';
 
 // css
 
-import styles from './InputAdress.module.css';
+import styles from './InputAdressSCSS.module.scss';
 
 class InputAdress extends Component {
   state = { value: '' };
 
   componentDidMount() {
-    const { adress } = this.props;
     this.sendAdress = debounce(this.sendAdress, 500);
-    this.setState({ value: adress });
   }
 
   handleChange = e => {
@@ -38,6 +36,7 @@ class InputAdress extends Component {
 
   render() {
     const { value } = this.state;
+    const { adress } = this.props;
 
     return (
       <form action="POST" onSubmit={this.handleSubmit} className={styles.form}>
@@ -46,7 +45,9 @@ class InputAdress extends Component {
             type="text"
             value={value}
             onChange={this.handleChange}
-            placeholder="Input adress for delivery"
+            placeholder={
+              adress ? `Your adress: ${adress}` : 'Input adress for delivery'
+            }
             className={styles.inputAdress}
           />
         </div>

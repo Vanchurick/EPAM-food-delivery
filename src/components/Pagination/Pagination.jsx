@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 // css
 
-import styles from './Pagination.module.css';
+import styles from './Pagination.module.scss';
 
 const Pagination = ({ page, items, onClick, previousPage, nextPage }) => (
   <div className={styles.container}>

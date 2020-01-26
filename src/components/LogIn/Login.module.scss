@@ -1,0 +1,14 @@
+@import '../../stylesheets/placeholders.scss';
+
+.form {
+  background-color: $main-color-2;
+  @extend %container-black;
+  text-align: center;
+  font-family: 'GothamProBold';
+  padding: 10px;
+}
+
+.input {
+  @extend %input;
+  margin: 10px 0;
+}

@@ -21,10 +21,11 @@ import Button from '../Button/Button';
 // helpers
 
 import * as notify from '../../helpers/notification';
+import { regexpEmail } from '../../helpers/helpers';
 
 // css
 
-import styles from './Order.module.css';
+import styles from './Order.module.scss';
 
 class Order extends Component {
   state = {};
@@ -34,6 +35,11 @@ class Order extends Component {
     const { user, basket, sendOrder, history } = this.props;
     if (basket.length === 0) {
       notify.alert('Basket is empty!');
+      return;
+    }
+
+    if (!regexpEmail.test(user.email)) {
+      notify.alert('Incorect email!');
       return;
     }
 
@@ -70,7 +76,7 @@ class Order extends Component {
               disabled={!autorization}
             />
             {!autorization && (
-              <p>
+              <p className={styles.warning}>
                 <small>
                   You need login before confirm order! After login your personal
                   data will change like in database!

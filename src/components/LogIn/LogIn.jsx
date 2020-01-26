@@ -18,7 +18,7 @@ import Button from '../Button/Button';
 
 // css
 
-import styles from './LogIn.module.css';
+import styles from './Login.module.scss';
 
 class LogIn extends Component {
   state = { email: '', password: '' };

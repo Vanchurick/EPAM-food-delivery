@@ -1,0 +1,24 @@
+@import '../../stylesheets/placeholders.scss';
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $main-color-2;
+  margin: 10px 0;
+}
+
+.btn {
+  @extend %button;
+  width: 30px;
+  height: 30px;
+  color: $main-color-2;
+
+  &:disabled {
+    opacity: 0;
+  }
+}
+
+.page {
+  margin: 0 10px;
+}

@@ -2,10 +2,27 @@
   position: relative;
 }
 
-.wrapper {
-  padding-top: 130px;
+.inputContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 998;
 }
 
-.background {
-  width: 100%;
+.basketButton {
+  position: fixed;
+  top: 15%;
+  right: 5%;
+  z-index: 999;
+}
+
+@media (min-width: 480px) {
+  .wrapper {
+    padding-top: 120px;
+  }
+
+  .basketButton {
+    top: 35%;
+  }
 }

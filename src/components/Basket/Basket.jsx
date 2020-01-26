@@ -15,7 +15,7 @@ import Button from '../Button/Button';
 
 // css
 
-import styles from './Basket.module.css';
+import styles from './Basket.module.scss';
 
 const Basket = ({ basket, remove, path, toConfirm }) => {
   const totalPrice = basket.reduce((acc, el) => acc + el.price * el.amount, 0);
@@ -36,14 +36,14 @@ const Basket = ({ basket, remove, path, toConfirm }) => {
                   className={styles.deleteBtn}
                   onClick={() => remove(el.id)}
                 >
-                  -
+                  x
                 </button>
               </li>
             ))}
           </ul>
           <div className={styles.totalPrice}>
             <p>Total price:</p>
-            <p>{totalPrice}</p>
+            <p>{totalPrice} UAH</p>
           </div>
           {path !== '/order' && (
             <Link to="/order">

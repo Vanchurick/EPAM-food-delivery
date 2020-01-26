@@ -9,9 +9,9 @@
 
 @font-face {
   font-family: 'GothamProBold';
-  src: url('fonts/gotham-pro-bold.otf') format('opentype'),
-    url('fonts/gotham-pro-bold.woff2') format('woff2'),
-    url('fonts/gotham-pro-bold.woff') format('woff');
+  src: url('./fonts/gotham-pro-bold.otf') format('opentype'),
+    url('./fonts/gotham-pro-bold.woff2') format('woff2'),
+    url('./fonts/gotham-pro-bold.woff') format('woff');
   font-style: normal;
   font-weight: normal;
 }

@@ -8,7 +8,8 @@ import Button from '../Button/Button';
 
 // css
 
-import styles from './SelectCuisine.module.css';
+// import styles from './SelectCuisine.module.css';
+import styles from './SelectCuisineSCSS.module.scss';
 
 // images
 
@@ -27,7 +28,7 @@ const images = [
 ];
 
 const SelectCuisine = () => (
-  <div className={styles.wrapper}>
+  <section className={styles.wrapper}>
     <h2 className={styles.title}>What would you like today?</h2>
 
     <div className={styles.container}>
@@ -35,16 +36,18 @@ const SelectCuisine = () => (
         const path = `/menu/?category=${img.name}`;
         const title = `${img.name} cuisine`;
         return (
-          <Link to={path} key={img.name}>
-            <CuisineButton img={img.src} alt={img.name} title={title} />
-          </Link>
+          <div className={styles.buttonCuisine} key={img.name}>
+            <Link to={path}>
+              <CuisineButton img={img.src} alt={img.name} title={title} />
+            </Link>
+          </div>
         );
       })}
     </div>
     <Link to="/lunches">
-      <Button text="Lunches" type="button" className={styles.button} />
+      <Button text="Lunches" type="button" className={styles.buttonLunches} />
     </Link>
-  </div>
+  </section>
 );
 
 export default SelectCuisine;

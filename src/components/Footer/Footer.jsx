@@ -1,17 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 // components
 
 import Icon from '../Icon/Icon';
 
-// images
-
-import logo from '../../assets/images/logo.png';
-
 // css
 
-import styles from './Footer.module.css';
+import styles from './Footer.module.scss';
 
 const socialTitleStyles = [styles.contactsTitle, styles.socialTitle];
 
@@ -19,29 +14,19 @@ const Footer = () => (
   <footer className={styles.footer}>
     <h2 className={styles.title}>Contacts:</h2>
     <div className={styles.contactsContainer}>
-      <div>
-        <Link to="/">
-          <div className={styles.logoContainer}>
-            <img src={logo} alt="logo" className={styles.logo} />
-          </div>
-        </Link>
-      </div>
       <div className={styles.contacts}>
         <p className={styles.contactsTitle}>Adress:</p>
         <p className={styles.adress}>Kudryashova str, 18, Kyiv, 02000</p>
       </div>
       <div className={styles.contacts}>
         <p className={styles.contactsTitle}>Tel. :</p>
-        <a href="tel:+380443905457" className={styles.email}>
+        <a href="tel:+380443905457" className={styles.link}>
           +38-044-390-5457
         </a>
       </div>
       <div className={styles.contacts}>
         <p className={styles.contactsTitle}>Email:</p>
-        <a
-          href="mailto: fooddeliverysupport@gmail.com"
-          className={styles.email}
-        >
+        <a href="mailto: fooddeliverysupport@gmail.com" className={styles.link}>
           fooddeliverysupport@gmail.com
         </a>
       </div>
