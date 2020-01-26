@@ -14,7 +14,7 @@ import {
 
 // css
 
-import styles from './LunchesPage.module.css';
+import styles from './LunchesPage.module.scss';
 
 // components
 
@@ -118,9 +118,13 @@ class LunchesPage extends Component {
           </div>
 
           <Lunches />
-          <Pagination onClick={this.getLucnhesFromPage} />
+          <div className="pagination">
+            <Pagination onClick={this.getLucnhesFromPage} />
+          </div>
         </div>
-        <BasketButton />
+        <div className={styles.button}>
+          <BasketButton />
+        </div>
         <Footer />
         {modal && (
           <Modal>

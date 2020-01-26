@@ -4,6 +4,7 @@ import {
   getLunchesSuccess,
   getLunchesError,
 } from '../actions/lunchesActions';
+import * as notify from '../../helpers/notification';
 
 const lunchesRequest = (params = {}) => dispatch => {
   dispatch(getLunchesStart());
@@ -14,7 +15,10 @@ const lunchesRequest = (params = {}) => dispatch => {
   axios
     .get(path)
     .then(resp => dispatch(getLunchesSuccess(resp.data)))
-    .catch(err => dispatch(getLunchesError(err.message)));
+    .catch(err => {
+      notify.error(err.message);
+      dispatch(getLunchesError(err.message));
+    });
 };
 
 export default lunchesRequest;

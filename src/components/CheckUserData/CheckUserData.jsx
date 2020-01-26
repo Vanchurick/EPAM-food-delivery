@@ -10,7 +10,7 @@ import { setAdress, setName, setEmail } from '../../redux/actions/userActions';
 
 // css
 
-import styles from './CheckUserData.module.css';
+import styles from './CheckUserData.module.scss';
 
 class CheckUserData extends Component {
   state = { name: '', email: '', adress: '' };

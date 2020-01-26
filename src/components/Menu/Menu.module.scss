@@ -1,0 +1,86 @@
+@import '../../stylesheets/placeholders.scss';
+
+.wrapper {
+  @media (min-width: 960px) {
+    width: 60%;
+  }
+}
+
+.titleContainer {
+  @extend %container-black;
+}
+
+.typeOfProducts {
+  @extend %container-black;
+  background-color: $main-color-2;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.allProducts {
+  height: 400px;
+  overflow-y: scroll;
+  padding: 10px;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #000;
+  }
+
+  @media (min-width: 1200px) {
+    height: 600px;
+  }
+}
+
+.productContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 10px 0;
+}
+
+.titleContainer {
+  @extend %container-black;
+  background-color: $main-color-2;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.title,
+.productTitle {
+  @extend %title;
+}
+
+.icon {
+  display: none;
+  @extend %container-black;
+
+  @media (min-width: 480px) {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+  }
+}
+
+.select {
+  width: 160px;
+  height: 40px;
+  border-radius: 20px;
+  font-family: 'GothamProBlack';
+  text-transform: uppercase;
+  margin-left: auto;
+  border: none;
+  box-shadow: 0 0 5px 2px $main-color-1;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px 2px $selected-color;
+  }
+}

@@ -12,12 +12,12 @@ import Button from '../Button/Button';
 
 // css
 
-import styles from './ProductCard.module.css';
+import styles from './ProductCard.module.scss';
 
 const ProductCard = ({ product, addProductToBasket }) => (
   <div className={styles.productCard}>
     <img src={product.img} alt="" className={styles.image} />
-    <div>
+    <div className={styles.info}>
       <p className={styles.name}>{product.name}</p>
       <p className={styles.price}>{product.price} UAH</p>
     </div>

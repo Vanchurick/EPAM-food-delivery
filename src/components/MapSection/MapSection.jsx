@@ -10,7 +10,7 @@ import deliveryman from '../../assets/images/deliverman.png';
 
 // css
 
-import styles from './MapSection.module.css';
+import styles from './MapSection.module.scss';
 
 const MapSection = () => (
   <section className={styles.mapSection}>

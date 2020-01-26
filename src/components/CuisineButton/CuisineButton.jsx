@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 
 // css
 
-import styles from './CuisineButton.module.css';
+// import styles from './CuisineButton.module.css';
+import styles from './CuisineButtonSCSS.module.scss';
 
 const CuisineButton = ({ img, alt, title }) => (
   <div className={styles.container}>

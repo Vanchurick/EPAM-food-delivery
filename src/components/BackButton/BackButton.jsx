@@ -7,7 +7,7 @@ import Icon from '../Icon/Icon';
 
 // css
 
-import styles from './BackButton.module.css';
+import styles from './BackButton.module.scss';
 
 const BackButton = () => (
   <Link to="/">

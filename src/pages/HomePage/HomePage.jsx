@@ -50,11 +50,15 @@ class HomePage extends Component {
           <Loader />
         ) : (
           <div>
-            <div className={styles.sLiderContainer}>
+            <section className={styles.sLiderContainer}>
               <Slider />
-              <InputAdress />
+              <div className={styles.inputContainer}>
+                <InputAdress />
+              </div>
+            </section>
+            <div className={styles.basketButton}>
+              <BasketButton />
             </div>
-            <BasketButton />
             <SelectCuisine />
             <MapSection />
             <Footer />

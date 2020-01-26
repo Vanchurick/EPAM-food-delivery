@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 // css
 
-import style from './Button.module.css';
+import style from './ButtonSCSS.module.scss';
 
 const Button = ({ text, type, func, className, disabled }) => {
   const buttonClasses = [style.button, className];

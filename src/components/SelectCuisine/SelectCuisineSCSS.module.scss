@@ -1,0 +1,70 @@
+@import '../../stylesheets/placeholders.scss';
+@import '../../stylesheets/vars.scss';
+
+.wrapper {
+  background-image: url('../../assets/images/bg.png');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  text-align: center;
+  padding: 10px;
+
+  @media (min-width: 768px) {
+    background-image: url('../../assets/images/bg768.png');
+  }
+
+  @media (min-width: 960px) {
+    background-image: url('../../assets/images/bg960.png');
+    background-size: cover;
+  }
+}
+
+.title {
+  @extend %title;
+  margin-top: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5%;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: 960px) {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
+.buttonCuisine {
+  width: 50%;
+  margin: 2%;
+
+  @media (min-width: 768px) {
+    width: 29%;
+  }
+}
+
+.buttonLunches {
+  @extend %button;
+  background-color: $main-color-2;
+  color: $main-color-1;
+  border: 1px solid $main-color-1;
+  // margin-bottom: 0;
+  transition: 0.5s;
+  border-radius: 20px;
+  width: 60%;
+  max-width: 300px;
+  box-shadow: 0 0 10px 2px $main-color-2;
+
+  &:hover {
+    background-color: $main-color-1;
+    color: $main-color-2;
+  }
+}

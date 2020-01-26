@@ -14,6 +14,7 @@ import {
   getModal,
   getModalSignUp,
   getModalLogIn,
+  getModalBasket,
 } from '../../redux/selectors/selectors';
 
 // components
@@ -26,6 +27,7 @@ import Menu from '../../components/Menu/Menu';
 import Basket from '../../components/Basket/Basket';
 import Footer from '../../components/Footer/Footer';
 import BackButton from '../../components/BackButton/BackButton';
+import BasketButton from '../../components/BasketButton/BasketButton';
 
 // helpers
 
@@ -50,6 +52,7 @@ class MenuPage extends Component {
     signup: PropTypes.bool.isRequired,
     login: PropTypes.bool.isRequired,
     loader: PropTypes.bool.isRequired,
+    basket: PropTypes.bool.isRequired,
   };
 
   componentDidMount() {
@@ -66,6 +69,7 @@ class MenuPage extends Component {
       signup,
       login,
       loader,
+      basket,
       location: { search },
     } = this.props;
 
@@ -80,7 +84,12 @@ class MenuPage extends Component {
           <Loader />
         ) : (
           <div className={wrapperStyles.join(' ')}>
-            <BackButton />
+            <div className={styles.backButton}>
+              <BackButton />
+            </div>
+            <div className={styles.basketButton}>
+              <BasketButton />
+            </div>
             <div className={styles.content}>
               <Menu cuisine={getCategoryFromUrl(search)} />
               <div className={styles.busketContainer}>
@@ -92,6 +101,7 @@ class MenuPage extends Component {
               <Modal>
                 {signup && <SignUp />}
                 {login && <LogIn />}
+                {basket && <Basket />}
               </Modal>
             )}
           </div>
@@ -106,6 +116,7 @@ const mSTP = state => ({
   signup: getModalSignUp(state),
   login: getModalLogIn(state),
   loader: getLoader(state),
+  basket: getModalBasket(state),
 });
 
 const mDTP = dispatch => ({

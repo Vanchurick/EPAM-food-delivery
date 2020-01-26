@@ -12,7 +12,7 @@ import Button from '../Button/Button';
 
 // css
 
-import styles from './LunchCard.module.css';
+import styles from './LunchCard.module.scss';
 
 const LunchCard = ({ lunch, addProductToBasket }) => {
   const sum = lunch.menu.reduce((acc, el) => acc + el.price, 0);

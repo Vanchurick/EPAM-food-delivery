@@ -13,7 +13,7 @@ import LunchCard from '../LunchCard/LunchCard';
 
 // css
 
-import styles from './Lunches.module.css';
+import styles from './Lunches.module.scss';
 
 const Lunches = ({ lunches, loader }) => (
   <div className={styles.container}>

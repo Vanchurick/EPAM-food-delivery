@@ -1,0 +1,66 @@
+@import '../../stylesheets/placeholders.scss';
+
+.wrapper {
+  @media (min-width: 480px) {
+    padding-top: 200px;
+  }
+
+  @media (min-width: 768px) {
+    padding-top: 150px;
+  }
+}
+
+.info {
+  @media (min-width: 768px) {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 960px) {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+}
+
+.form {
+  text-align: center;
+  font-family: 'GothamPro';
+}
+
+.title {
+  @extend %title;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.button {
+  width: 80%;
+
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+
+  @media (min-width: 960px) {
+    width: 30%;
+  }
+}
+
+.warning {
+  @media (min-width: 768px) {
+    width: 50%;
+    margin: 10px auto;
+  }
+}
+
+.data {
+  @media (min-width: 960px) {
+    width: 45%;
+    margin: 2%;
+  }
+
+  @media (min-width: 1200px) {
+    width: 35%;
+    // margin: 2%;
+  }
+}

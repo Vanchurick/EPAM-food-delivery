@@ -1,0 +1,30 @@
+@import '../../stylesheets/vars.scss';
+
+.button {
+  font-family: 'GothamProBlack';
+  font-style: normal;
+  font-weight: normal;
+  font-size: $text-font-size-360;
+  text-transform: uppercase;
+  color: $main-color-2;
+
+  width: 130px;
+  height: 40px;
+  border: 2px solid $main-color-1;
+  border-radius: 20px;
+  margin: 10px;
+
+  background-color: $main-color-1;
+
+  transition: 0.5s;
+  cursor: pointer;
+
+  &:hover {
+    color: $main-color-1;
+    background-color: $main-color-2;
+  }
+
+  &:disabled {
+    background-color: $disabled-color;
+  }
+}
