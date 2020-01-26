@@ -1,0 +1,46 @@
+@import '../../stylesheets/placeholders.scss';
+
+.productCard {
+  @extend %container-black;
+  border-radius: 20px;
+  width: 40%;
+  padding: 5px;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  font-family: 'GothamPro';
+
+  @media (min-width: 768px) {
+    width: 30%;
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100px;
+  border-radius: 20px;
+
+  @media (min-width: 768px) {
+    height: 150px;
+  }
+
+  @media (min-width: 1200px) {
+    height: 150px;
+  }
+}
+
+.info {
+  margin: 10px 0;
+}
+
+.price {
+  font-family: 'GothamProBold';
+  margin-top: 10px;
+}
+
+.button {
+  width: 80%;
+}

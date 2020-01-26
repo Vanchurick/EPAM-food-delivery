@@ -1,0 +1,24 @@
+@import '../../stylesheets/placeholders.scss';
+
+.data {
+  @extend %container-black;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+
+  @media (min-width: 960px) {
+    margin: 0;
+  }
+}
+
+.title {
+  @extend %title;
+  text-align: center;
+}
+
+.input {
+  @extend %input;
+  margin: 10px 0;
+}

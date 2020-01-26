@@ -2,16 +2,21 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import debounce from 'lodash/debounce';
+
+// redux
+
 import { setAdress } from '../../redux/actions/userActions';
-import styles from './InputAdress.module.css';
+import { getAdress } from '../../redux/selectors/selectors';
+
+// css
+
+import styles from './InputAdressSCSS.module.scss';
 
 class InputAdress extends Component {
   state = { value: '' };
 
   componentDidMount() {
-    const { adress } = this.props;
     this.sendAdress = debounce(this.sendAdress, 500);
-    this.setState({ value: adress });
   }
 
   handleChange = e => {
@@ -31,6 +36,7 @@ class InputAdress extends Component {
 
   render() {
     const { value } = this.state;
+    const { adress } = this.props;
 
     return (
       <form action="POST" onSubmit={this.handleSubmit} className={styles.form}>
@@ -39,7 +45,9 @@ class InputAdress extends Component {
             type="text"
             value={value}
             onChange={this.handleChange}
-            placeholder="Input adress for delivery"
+            placeholder={
+              adress ? `Your adress: ${adress}` : 'Input adress for delivery'
+            }
             className={styles.inputAdress}
           />
         </div>
@@ -58,7 +66,7 @@ InputAdress.propTypes = {
 };
 
 const mSTP = state => ({
-  adress: state.user.adress,
+  adress: getAdress(state),
 });
 
 const mDTP = dispatch => ({

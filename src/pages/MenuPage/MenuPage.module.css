@@ -1,0 +1,115 @@
+.wrapper {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.backgroundUkraine {
+  background-image: url('../../assets/images/slider/ukrainian-cuisine.jpg');
+}
+
+.backgroundItaly {
+  background-image: url('../../assets/images/slider/italian-cuisine.jpg');
+}
+
+.backgroundGeorgia {
+  background-image: url('../../assets/images/slider/georgian-cuisine.jpg');
+}
+
+.backgroundJapan {
+  background-image: url('../../assets/images/slider/japanese-cuisine.jpeg');
+}
+
+.backgroundPizza {
+  background-image: url('../../assets/images/slider/pizza-cuisine.jpg');
+}
+
+.content {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 100px;
+}
+
+.busketContainer {
+  display: none;
+}
+
+.basketButton {
+  position: fixed;
+  top: 34%;
+  right: 3%;
+  z-index: 997;
+}
+
+.backButton {
+  position: absolute;
+  top: 2%;
+  left: 3%;
+  z-index: 997;
+}
+
+@media (min-width: 480px) {
+  .wrapper {
+    padding-top: 130px;
+    background-position: center 18%;
+  }
+
+  .content {
+    margin-top: 150px;
+  }
+
+  .basketButton {
+    top: 38%;
+  }
+
+  .backButton {
+    top: 20%;
+  }
+}
+
+@media (min-width: 768px) {
+  .content {
+    margin-top: 0;
+  }
+
+  .basketButton {
+    top: 25%;
+  }
+}
+
+@media (min-width: 960px) {
+  .busketContainer {
+    display: block;
+    align-self: flex-start;
+    width: 30%;
+  }
+
+  .basketButton {
+    display: none;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content {
+    padding-top: 70px;
+    flex-grow: 1;
+  }
+
+  .backButton {
+    top: 15%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wrapper {
+    padding-top: 120px;
+    background-position: center 15%;
+  }
+
+  .backButton {
+    top: 13%;
+  }
+}

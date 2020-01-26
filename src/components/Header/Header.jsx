@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 // redux
 
+import { getName, getAutorization } from '../../redux/selectors/selectors';
 import {
   openModalSignUp,
   openModalLogIn,
@@ -14,9 +15,15 @@ import { logOut } from '../../redux/actions/userActions';
 // components
 
 import Button from '../Button/Button';
-import styles from './Header.module.css';
-import logo from '../../assets/images/logo.png';
 import Icon from '../Icon/Icon';
+
+// images
+
+import logo from '../../assets/images/logo.png';
+
+// css
+
+import styles from './HeaderSCSS.module.scss';
 
 const Header = ({
   openSignUpForm,
@@ -26,19 +33,19 @@ const Header = ({
   logout,
 }) => (
   <header className={styles.header}>
-    <div>
+    <div className={styles.logoContainer}>
       <Link to="/">
-        <div className={styles.logoContainer}>
-          <img src={logo} alt="logo" className={styles.logo} />
-        </div>
+        <img src={logo} alt="logo" className={styles.logo} />
       </Link>
     </div>
-    <div>
+    <div className={styles.autorization}>
       {autorization ? (
-        <div className={styles.greetingContainer}>
+        <>
           <p className={styles.greeting}>Bon appetit, {name}!</p>
-          <Icon icon="Logout" className={styles.logout} onClick={logout} />
-        </div>
+          <div className={styles.logoutContainer}>
+            <Icon icon="Logout" className={styles.logout} onClick={logout} />
+          </div>
+        </>
       ) : (
         <>
           <Button text="Sign Up" type="button" func={openSignUpForm} />
@@ -58,8 +65,8 @@ Header.propTypes = {
 };
 
 const mSTP = state => ({
-  autorization: state.user.autorization,
-  name: state.user.name,
+  autorization: getAutorization(state),
+  name: getName(state),
 });
 
 const mDTP = dispatch => ({

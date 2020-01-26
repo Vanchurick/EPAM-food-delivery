@@ -1,0 +1,81 @@
+// @import '../../stylesheets/vars.scss';
+@import '../../stylesheets/placeholders.scss';
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid $main-color-1;
+  padding: 10px 0;
+  background-color: $selected-color;
+
+  @media (min-width: 480px) {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row-reverse;
+  }
+
+  @media (min-width: 960px) {
+    justify-content: space-between;
+  }
+}
+
+.logoContainer {
+  order: 1;
+  width: 100px;
+  margin-top: 20px;
+
+  @media (min-width: 960px) {
+    margin-left: 20px;
+    margin-top: 0;
+  }
+}
+
+.logo {
+  width: 100%;
+}
+
+.autorization {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    width: auto;
+    margin-right: 10px;
+  }
+}
+
+.greeting {
+  font-family: 'GothamPro';
+  font-size: $title-font-size-360;
+  text-align: center;
+  width: 70%;
+}
+
+.logout {
+  width: 20px;
+  height: 20px;
+}
+
+.logoutContainer {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid $main-color-1;
+  cursor: pointer;
+
+  &:hover {
+    @extend %container-white;
+  }
+}

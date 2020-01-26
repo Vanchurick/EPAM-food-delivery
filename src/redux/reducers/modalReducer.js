@@ -13,6 +13,8 @@ const userReducer = (state = initialState, { type }) => {
       return { ...state, modal: true, signup: true };
     case ActionType.OPEN_MODAL_LOG_IN:
       return { ...state, modal: true, login: true };
+    case ActionType.OPEN_MODAL_BASKET:
+      return { ...state, modal: true, basket: true };
     case ActionType.CLOSE_MODAL:
       return {
         ...state,

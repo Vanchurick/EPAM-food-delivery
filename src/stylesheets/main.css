@@ -1,14 +1,10 @@
-@import './libs/normalize.css';
-@import './vars.css';
-@import './fonts.css';
+@import './libs/reset.css';
+@import './fonts.scss';
+@import './vars.scss';
+@import './placeholders.scss';
 
 * {
   font-family: 'GothamPro';
   font-style: normal;
   font-weight: normal;
-}
-
-#root {
-  position: relative;
-  height: 100vh;
 }
