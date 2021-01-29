@@ -1,12 +1,21 @@
 @import '../../stylesheets/placeholders.scss';
 
 .wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   @media (min-width: 480px) {
     padding-top: 200px;
   }
 
   @media (min-width: 768px) {
     padding-top: 150px;
+  }
+
+  .content {
+    width: 90%;
   }
 }
 
