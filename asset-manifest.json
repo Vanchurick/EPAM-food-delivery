@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/EPAM-food-delivery/static/css/main.62f5956e.chunk.css",
-    "main.js": "/EPAM-food-delivery/static/js/main.6c817b34.chunk.js",
-    "main.js.map": "/EPAM-food-delivery/static/js/main.6c817b34.chunk.js.map",
+    "main.js": "/EPAM-food-delivery/static/js/main.289202c6.chunk.js",
+    "main.js.map": "/EPAM-food-delivery/static/js/main.289202c6.chunk.js.map",
     "runtime-main.js": "/EPAM-food-delivery/static/js/runtime-main.27923665.js",
     "runtime-main.js.map": "/EPAM-food-delivery/static/js/runtime-main.27923665.js.map",
     "static/css/2.5dbdccff.chunk.css": "/EPAM-food-delivery/static/css/2.5dbdccff.chunk.css",
-    "static/js/2.2b5e708a.chunk.js": "/EPAM-food-delivery/static/js/2.2b5e708a.chunk.js",
-    "static/js/2.2b5e708a.chunk.js.map": "/EPAM-food-delivery/static/js/2.2b5e708a.chunk.js.map",
+    "static/js/2.23151379.chunk.js": "/EPAM-food-delivery/static/js/2.23151379.chunk.js",
+    "static/js/2.23151379.chunk.js.map": "/EPAM-food-delivery/static/js/2.23151379.chunk.js.map",
     "index.html": "/EPAM-food-delivery/index.html",
-    "precache-manifest.d100e6f5e07ee5d65d810f0cbd6328e3.js": "/EPAM-food-delivery/precache-manifest.d100e6f5e07ee5d65d810f0cbd6328e3.js",
+    "precache-manifest.7918c978dc66f1c4fcde23ebaf441e15.js": "/EPAM-food-delivery/precache-manifest.7918c978dc66f1c4fcde23ebaf441e15.js",
     "service-worker.js": "/EPAM-food-delivery/service-worker.js",
     "static/css/2.5dbdccff.chunk.css.map": "/EPAM-food-delivery/static/css/2.5dbdccff.chunk.css.map",
     "static/css/main.62f5956e.chunk.css.map": "/EPAM-food-delivery/static/css/main.62f5956e.chunk.css.map",
-    "static/js/2.2b5e708a.chunk.js.LICENSE": "/EPAM-food-delivery/static/js/2.2b5e708a.chunk.js.LICENSE",
+    "static/js/2.23151379.chunk.js.LICENSE": "/EPAM-food-delivery/static/js/2.23151379.chunk.js.LICENSE",
     "static/media/back.706af0ca.svg": "/EPAM-food-delivery/static/media/back.706af0ca.svg",
     "static/media/basket.a49f1a90.svg": "/EPAM-food-delivery/static/media/basket.a49f1a90.svg",
     "static/media/deliverman.png": "/EPAM-food-delivery/static/media/deliverman.69c3ab2c.png",
@@ -42,8 +42,8 @@
   "entrypoints": [
     "static/js/runtime-main.27923665.js",
     "static/css/2.5dbdccff.chunk.css",
-    "static/js/2.2b5e708a.chunk.js",
+    "static/js/2.23151379.chunk.js",
     "static/css/main.62f5956e.chunk.css",
-    "static/js/main.6c817b34.chunk.js"
+    "static/js/main.289202c6.chunk.js"
   ]
 }
