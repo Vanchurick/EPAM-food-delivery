@@ -2,15 +2,12 @@
 
 .iconContainer {
   @extend %button;
-  // position: absolute;
-  // top: 2%;
-  // left: 3%;
-  // z-index: 997;
   width: 40px;
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 10px;
 
   @media (min-width: 480px) {
     top: 20%;

@@ -17,6 +17,13 @@
   z-index: 999;
 }
 
+.swimButtons {
+  position: fixed;
+  top: 200px;
+  z-index: 2;
+  width: 100%;
+}
+
 @media (min-width: 480px) {
   .wrapper {
     padding-top: 120px;

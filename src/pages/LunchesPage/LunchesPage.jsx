@@ -18,7 +18,6 @@ import styles from './LunchesPage.module.scss';
 
 // components
 
-import Footer from '../../components/Footer/Footer';
 import Modal from '../../components/Modal/Modal';
 import SignUp from '../../components/SignUp/SignUp';
 import LogIn from '../../components/LogIn/LogIn';
@@ -125,7 +124,6 @@ class LunchesPage extends Component {
         <div className={styles.button}>
           <BasketButton />
         </div>
-        <Footer />
         {modal && (
           <Modal>
             {signup && <SignUp />}

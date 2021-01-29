@@ -7,6 +7,7 @@ import MenuPage from './pages/MenuPage/MenuPage';
 import OrderPage from './pages/OrderPage/OrderPage';
 import LunchesPage from './pages/LunchesPage/LunchesPage';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 class App extends Component {
   state = {};
@@ -14,14 +15,17 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header />
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/menu" component={MenuPage} />
-          <Route path="/order" component={OrderPage} />
-          <Route path="/lunches" component={LunchesPage} />
-          <Redirect push to="/" />
-        </Switch>
+        <div className="main">
+          <Header />
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/menu" component={MenuPage} />
+            <Route path="/order" component={OrderPage} />
+            <Route path="/lunches" component={LunchesPage} />
+            <Redirect push to="/" />
+          </Switch>
+          <Footer />
+        </div>
         <ToastContainer />
       </div>
     );
