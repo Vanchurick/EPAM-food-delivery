@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/EPAM-food-delivery/precache-manifest.db377a9a9bc9274bba34721c010be59b.js"
+  "/EPAM-food-delivery/precache-manifest.4778fe92ecfbce2dd8a0dad9fe17c754.js"
 );
 
 self.addEventListener('message', (event) => {

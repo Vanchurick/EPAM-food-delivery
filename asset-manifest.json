@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/EPAM-food-delivery/static/css/main.62f5956e.chunk.css",
-    "main.js": "/EPAM-food-delivery/static/js/main.228662fb.chunk.js",
-    "main.js.map": "/EPAM-food-delivery/static/js/main.228662fb.chunk.js.map",
+    "main.css": "/EPAM-food-delivery/static/css/main.4ca34c99.chunk.css",
+    "main.js": "/EPAM-food-delivery/static/js/main.3f53872f.chunk.js",
+    "main.js.map": "/EPAM-food-delivery/static/js/main.3f53872f.chunk.js.map",
     "runtime-main.js": "/EPAM-food-delivery/static/js/runtime-main.27923665.js",
     "runtime-main.js.map": "/EPAM-food-delivery/static/js/runtime-main.27923665.js.map",
     "static/css/2.5dbdccff.chunk.css": "/EPAM-food-delivery/static/css/2.5dbdccff.chunk.css",
-    "static/js/2.23151379.chunk.js": "/EPAM-food-delivery/static/js/2.23151379.chunk.js",
-    "static/js/2.23151379.chunk.js.map": "/EPAM-food-delivery/static/js/2.23151379.chunk.js.map",
+    "static/js/2.7d603df9.chunk.js": "/EPAM-food-delivery/static/js/2.7d603df9.chunk.js",
+    "static/js/2.7d603df9.chunk.js.map": "/EPAM-food-delivery/static/js/2.7d603df9.chunk.js.map",
     "index.html": "/EPAM-food-delivery/index.html",
-    "precache-manifest.db377a9a9bc9274bba34721c010be59b.js": "/EPAM-food-delivery/precache-manifest.db377a9a9bc9274bba34721c010be59b.js",
+    "precache-manifest.4778fe92ecfbce2dd8a0dad9fe17c754.js": "/EPAM-food-delivery/precache-manifest.4778fe92ecfbce2dd8a0dad9fe17c754.js",
     "service-worker.js": "/EPAM-food-delivery/service-worker.js",
     "static/css/2.5dbdccff.chunk.css.map": "/EPAM-food-delivery/static/css/2.5dbdccff.chunk.css.map",
-    "static/css/main.62f5956e.chunk.css.map": "/EPAM-food-delivery/static/css/main.62f5956e.chunk.css.map",
-    "static/js/2.23151379.chunk.js.LICENSE": "/EPAM-food-delivery/static/js/2.23151379.chunk.js.LICENSE",
+    "static/css/main.4ca34c99.chunk.css.map": "/EPAM-food-delivery/static/css/main.4ca34c99.chunk.css.map",
+    "static/js/2.7d603df9.chunk.js.LICENSE": "/EPAM-food-delivery/static/js/2.7d603df9.chunk.js.LICENSE",
     "static/media/back.706af0ca.svg": "/EPAM-food-delivery/static/media/back.706af0ca.svg",
     "static/media/basket.a49f1a90.svg": "/EPAM-food-delivery/static/media/basket.a49f1a90.svg",
     "static/media/deliverman.png": "/EPAM-food-delivery/static/media/deliverman.69c3ab2c.png",
@@ -42,8 +42,8 @@
   "entrypoints": [
     "static/js/runtime-main.27923665.js",
     "static/css/2.5dbdccff.chunk.css",
-    "static/js/2.23151379.chunk.js",
-    "static/css/main.62f5956e.chunk.css",
-    "static/js/main.228662fb.chunk.js"
+    "static/js/2.7d603df9.chunk.js",
+    "static/css/main.4ca34c99.chunk.css",
+    "static/js/main.3f53872f.chunk.js"
   ]
 }
