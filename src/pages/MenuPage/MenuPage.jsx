@@ -25,9 +25,7 @@ import LogIn from '../../components/LogIn/LogIn';
 import Loader from '../../components/Loader/Loader';
 import Menu from '../../components/Menu/Menu';
 import Basket from '../../components/Basket/Basket';
-import Footer from '../../components/Footer/Footer';
-import BackButton from '../../components/BackButton/BackButton';
-import BasketButton from '../../components/BasketButton/BasketButton';
+import SwimButtons from '../../components/SwimButtons/SwimButtons';
 
 // helpers
 
@@ -84,11 +82,8 @@ class MenuPage extends Component {
           <Loader />
         ) : (
           <div className={wrapperStyles.join(' ')}>
-            <div className={styles.backButton}>
-              <BackButton />
-            </div>
-            <div className={styles.basketButton}>
-              <BasketButton />
+            <div className={styles.swimButtons}>
+              <SwimButtons />
             </div>
             <div className={styles.content}>
               <Menu cuisine={getCategoryFromUrl(search)} />
@@ -96,7 +91,6 @@ class MenuPage extends Component {
                 <Basket />
               </div>
             </div>
-            <Footer />
             {modal && (
               <Modal>
                 {signup && <SignUp />}

@@ -10,7 +10,6 @@ import {
 
 import Loader from '../../components/Loader/Loader';
 import Order from '../../components/Order/Order';
-import Footer from '../../components/Footer/Footer';
 import Modal from '../../components/Modal/Modal';
 import SignUp from '../../components/SignUp/SignUp';
 import LogIn from '../../components/LogIn/LogIn';
@@ -31,7 +30,6 @@ const OrderPage = ({
     ) : (
       <div className={styles.wrapper}>
         <Order path={pathname} history={history} />
-        <Footer />
         {modal && (
           <Modal>
             {signup && <SignUp />}
