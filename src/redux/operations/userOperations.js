@@ -13,7 +13,8 @@ import {
 export const signUpUser = credentials => dispatch => {
   dispatch(signUpStart());
 
-  const serverUrl = process.env.PRODUCTION_URL || 'http://localhost:6060/';
+  const serverUrl =
+    process.env.REACT_APP_PRODUCTION_URL || 'http://localhost:6060/';
 
   axios
     .post(`${serverUrl}signup`, credentials)
