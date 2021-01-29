@@ -13,8 +13,7 @@ import {
 export const signUpUser = credentials => dispatch => {
   dispatch(signUpStart());
 
-  const serverUrl =
-    process.env.REACT_APP_PRODUCTION_URL || 'http://localhost:6060/';
+  const serverUrl = process.env.REACT_APP_API_URL;
 
   axios
     .post(`${serverUrl}signup`, credentials)
@@ -39,8 +38,10 @@ export const signUpUser = credentials => dispatch => {
 export const loginUser = credentials => dispatch => {
   dispatch(logInStart());
 
+  const serverUrl = process.env.REACT_APP_API_URL;
+
   axios
-    .post('http://localhost:6060/login', credentials)
+    .post(`${serverUrl}login`, credentials)
     .then(resp => {
       if (!resp.data.login) {
         notify.alert('Wrong email or password! Please, check it!');
