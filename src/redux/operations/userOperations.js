@@ -12,8 +12,11 @@ import {
 
 export const signUpUser = credentials => dispatch => {
   dispatch(signUpStart());
+
+  const serverUrl = process.env.PRODUCTION_URL || 'http://localhost:6060/';
+
   axios
-    .post('http://localhost:6060/signup', credentials)
+    .post(`${serverUrl}signup`, credentials)
     .then(resp => {
       if (resp.data.status === 'failed') {
         notify.alert(resp.data.message);
