@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a0ca32cbee489cf92d6bcdd0475b4099",
+    "revision": "d9b381710d3b233090878ee7f9f16258",
     "url": "/EPAM-food-delivery/index.html"
   },
   {
-    "revision": "8d49be821a6138055073",
+    "revision": "49e42da106ceaef3f2a3",
     "url": "/EPAM-food-delivery/static/css/2.5dbdccff.chunk.css"
   },
   {
-    "revision": "c095f4f57b3701f69b87",
+    "revision": "5ecadd7d5868bc0e73f7",
     "url": "/EPAM-food-delivery/static/css/main.62f5956e.chunk.css"
   },
   {
-    "revision": "8d49be821a6138055073",
-    "url": "/EPAM-food-delivery/static/js/2.80bf1ac1.chunk.js"
+    "revision": "49e42da106ceaef3f2a3",
+    "url": "/EPAM-food-delivery/static/js/2.2b5e708a.chunk.js"
   },
   {
     "revision": "86c8af751af5a3089a0acdd73d39fe96",
-    "url": "/EPAM-food-delivery/static/js/2.80bf1ac1.chunk.js.LICENSE"
+    "url": "/EPAM-food-delivery/static/js/2.2b5e708a.chunk.js.LICENSE"
   },
   {
-    "revision": "c095f4f57b3701f69b87",
-    "url": "/EPAM-food-delivery/static/js/main.10c2a244.chunk.js"
+    "revision": "5ecadd7d5868bc0e73f7",
+    "url": "/EPAM-food-delivery/static/js/main.6c817b34.chunk.js"
   },
   {
     "revision": "6121cea2f41c4c8ee1c2",
