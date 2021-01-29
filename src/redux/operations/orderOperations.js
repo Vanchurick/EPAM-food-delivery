@@ -10,8 +10,7 @@ import {
 const confirmOrder = credentials => dispatch => {
   dispatch(confirmOrderStart());
 
-  const serverUrl =
-    process.env.REACT_APP_PRODUCTION_URL || 'http://localhost:6060/';
+  const serverUrl = process.env.REACT_APP_API_URL;
 
   axios
     .post(`${serverUrl}order`, credentials)
