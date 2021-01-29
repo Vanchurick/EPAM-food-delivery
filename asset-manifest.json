@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/EPAM-food-delivery/static/css/main.62f5956e.chunk.css",
-    "main.js": "/EPAM-food-delivery/static/js/main.228662fb.chunk.js",
-    "main.js.map": "/EPAM-food-delivery/static/js/main.228662fb.chunk.js.map",
+    "main.js": "/EPAM-food-delivery/static/js/main.4f99db15.chunk.js",
+    "main.js.map": "/EPAM-food-delivery/static/js/main.4f99db15.chunk.js.map",
     "runtime-main.js": "/EPAM-food-delivery/static/js/runtime-main.27923665.js",
     "runtime-main.js.map": "/EPAM-food-delivery/static/js/runtime-main.27923665.js.map",
     "static/css/2.5dbdccff.chunk.css": "/EPAM-food-delivery/static/css/2.5dbdccff.chunk.css",
     "static/js/2.23151379.chunk.js": "/EPAM-food-delivery/static/js/2.23151379.chunk.js",
     "static/js/2.23151379.chunk.js.map": "/EPAM-food-delivery/static/js/2.23151379.chunk.js.map",
     "index.html": "/EPAM-food-delivery/index.html",
-    "precache-manifest.db377a9a9bc9274bba34721c010be59b.js": "/EPAM-food-delivery/precache-manifest.db377a9a9bc9274bba34721c010be59b.js",
+    "precache-manifest.edabb4b12e7f4074443ee8ceee1e1fbc.js": "/EPAM-food-delivery/precache-manifest.edabb4b12e7f4074443ee8ceee1e1fbc.js",
     "service-worker.js": "/EPAM-food-delivery/service-worker.js",
     "static/css/2.5dbdccff.chunk.css.map": "/EPAM-food-delivery/static/css/2.5dbdccff.chunk.css.map",
     "static/css/main.62f5956e.chunk.css.map": "/EPAM-food-delivery/static/css/main.62f5956e.chunk.css.map",
@@ -44,6 +44,6 @@
     "static/css/2.5dbdccff.chunk.css",
     "static/js/2.23151379.chunk.js",
     "static/css/main.62f5956e.chunk.css",
-    "static/js/main.228662fb.chunk.js"
+    "static/js/main.4f99db15.chunk.js"
   ]
 }
