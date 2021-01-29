@@ -9,7 +9,10 @@ import {
 
 const getMenu = category => dispatch => {
   dispatch(getMenuStart());
-  const GET_MENU_URL = `http://localhost:6060/menu/${category}`;
+
+  const serverUrl = process.env.PRODUCTION_URL || 'http://localhost:6060/';
+
+  const GET_MENU_URL = `${serverUrl}menu/${category}`;
   axios
     .get(GET_MENU_URL)
     .then(resp => dispatch(getMenuSuccess(resp.data)))

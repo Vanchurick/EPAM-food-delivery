@@ -9,8 +9,11 @@ import {
 
 const confirmOrder = credentials => dispatch => {
   dispatch(confirmOrderStart());
+
+  const serverUrl = process.env.PRODUCTION_URL || 'http://localhost:6060/';
+
   axios
-    .post('http://localhost:6060/order', credentials)
+    .post(`${serverUrl}order`, credentials)
     .then(resp => {
       notify.alert('Order confirmed! Diliverman will be ASAP!');
       dispatch(confirmOrderSuccess(resp.data));

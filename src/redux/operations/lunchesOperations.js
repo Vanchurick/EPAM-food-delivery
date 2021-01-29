@@ -9,7 +9,9 @@ import * as notify from '../../helpers/notification';
 const lunchesRequest = (params = {}) => dispatch => {
   dispatch(getLunchesStart());
 
-  const path = `http://localhost:6060/lunches/?page=${params.page ||
+  const serverUrl = process.env.PRODUCTION_URL || 'http://localhost:6060/';
+
+  const path = `${serverUrl}lunches/?page=${params.page ||
     1}&category=${params.category || ''}&sort=${params.sort || ''}`;
 
   axios
